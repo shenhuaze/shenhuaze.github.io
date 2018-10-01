@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shenhuaze.coding.me/about/index.html</loc>
+    
+    <lastmod>2018-10-01T08:03:51.233Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://shenhuaze.coding.me/2018/07/14/git%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2018-07-14T10:38:28.868Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://shenhuaze.coding.me/2018/05/20/%E5%8F%AA%E5%8C%85%E5%90%AB%E8%8B%B1%E6%96%87%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D%E7%9A%84trie%E6%A0%91%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2018-05-20T14:18:48.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shenhuaze.coding.me/about/index.html</loc>
-    
-    <lastmod>2018-05-20T12:30:10.923Z</lastmod>
     
   </url>
   
