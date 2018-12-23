@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Coding,Dynamic Programming,坐标型动态规划," />
+  <meta name="keywords" content="机器学习,感知机," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="题目位置http://www.lintcode.com/en/problem/edit-distance/">
-<meta name="keywords" content="Coding,Dynamic Programming,坐标型动态规划">
+<meta name="description" content="感知机（perceptron）是李航《统计学习方法》第二章的内容，原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms），例如中文分词、词性标注以及命">
+<meta name="keywords" content="机器学习,感知机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Edit Distance">
-<meta property="og:url" content="http://shenhuaze.coding.me/2018/05/06/Edit-Distance/index.html">
+<meta property="og:title" content="从零开始实现感知机算法">
+<meta property="og:url" content="http://shenhuaze.coding.me/2018/12/23/从零开始实现感知机算法/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="题目位置http://www.lintcode.com/en/problem/edit-distance/">
+<meta property="og:description" content="感知机（perceptron）是李航《统计学习方法》第二章的内容，原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms），例如中文分词、词性标注以及命">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-27T10:06:36.876Z">
+<meta property="og:updated_time" content="2018-12-23T06:34:56.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edit Distance">
-<meta name="twitter:description" content="题目位置http://www.lintcode.com/en/problem/edit-distance/">
+<meta name="twitter:title" content="从零开始实现感知机算法">
+<meta name="twitter:description" content="感知机（perceptron）是李航《统计学习方法》第二章的内容，原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms），例如中文分词、词性标注以及命">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.coding.me/2018/05/06/Edit-Distance/"/>
+  <link rel="canonical" href="http://shenhuaze.coding.me/2018/12/23/从零开始实现感知机算法/"/>
 
 
 
 
 
-  <title>Edit Distance | 申化泽的个人网站</title>
+  <title>从零开始实现感知机算法 | 申化泽的个人网站</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.coding.me/2018/05/06/Edit-Distance/">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.coding.me/2018/12/23/从零开始实现感知机算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Edit Distance</h1>
+          <h1 class="post-title" itemprop="name headline">从零开始实现感知机算法</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-06T10:34:46+08:00">
-                2018-05-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T10:10:47+08:00">
+                2018-12-23
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/" itemprop="url" rel="index">
-                    <span itemprop="name">Coding</span>
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
                   </a>
                 </span>
 
@@ -328,8 +328,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/Dynamic-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Dynamic Programming</span>
+                  <a href="/categories/机器学习/感知机/" itemprop="url" rel="index">
+                    <span itemprop="name">感知机</span>
                   </a>
                 </span>
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/06/Edit-Distance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/06/Edit-Distance/" itemprop="commentsCount"></span>
+                <a href="/2018/12/23/从零开始实现感知机算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/23/从零开始实现感知机算法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,7 +355,7 @@
 
           
           
-             <span id="/2018/05/06/Edit-Distance/" class="leancloud_visitors" data-flag-title="Edit Distance">
+             <span id="/2018/12/23/从零开始实现感知机算法/" class="leancloud_visitors" data-flag-title="从零开始实现感知机算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,25 +386,22 @@
       
 
       
-        <h3 id="题目位置"><a href="#题目位置" class="headerlink" title="题目位置"></a>题目位置</h3><p><a href="http://www.lintcode.com/en/problem/edit-distance/" target="_blank" rel="noopener">http://www.lintcode.com/en/problem/edit-distance/</a></p>
+        <p>感知机（perceptron）是李航《统计学习方法》第二章的内容，原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（<a href="http://www.aclweb.org/anthology/W02-1001" target="_blank" rel="noopener">Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms</a>），例如中文分词、词性标注以及命名实体识别。为了加深对算法的理解，我决定动手写代码实现一下感知机如何用于最简单的二分类问题，主要参考的是李航《统计学习方法》第二章的内容。</p>
 <a id="more"></a>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Given two words <em>word1</em> and <em>word2</em>, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)</p>
-<p>You have the following 3 operations permitted on a word:</p>
-<ul>
-<li>Insert a character</li>
-<li>Delete a character</li>
-<li>Replace a character</li>
-</ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Given word1 = <code>&quot;mart&quot;</code> and word2 = <code>&quot;karma&quot;</code>, return <code>3</code>.</p>
-<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><ul>
-<li>这道题求的是<strong>最少的步骤数，相当于求最小值。</strong></li>
-<li>状态：<code>dp[i][j]</code>表示从<code>word1</code>的第<code>i</code>个字符转换到<code>word2</code>的第<code>j</code>个字符所需要的步骤数。</li>
-<li>方程：两种情况，一是当<code>word1[i] == word2[j]</code>时，<code>dp[i][j] = dp[i-1][j-1]</code>；二是当<code>word1[i] != word2[j]</code>时，<code>dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])</code>。</li>
-<li>初始化：<code>dp</code>数组的维度为<code>(word1.length+1, word2.length+1)</code>，因为还要考虑空字符串的情况，初始化的时候就初始化第一行和第一列，<code>dp[i][0] = i</code>, <code>dp[0][i] = j</code>，为啥，因为空字符串转换到任意一个字符串的第<code>i</code>个位置时，肯定需要<code>i</code>步。</li>
-<li>答案：就是<code>dp[word1.length][word2.length]</code>。</li>
-</ul>
-<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><h4 id="解法一：动态规划"><a href="#解法一：动态规划" class="headerlink" title="解法一：动态规划"></a>解法一：动态规划</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动态规划解法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word1: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word2: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: The minimum number of steps.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">int</span> m = word1.length();</span><br><span class="line">        <span class="keyword">int</span> n = word2.length();</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            dp[<span class="number">0</span>][i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n + <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="comment">// 这里应该是charAt(i-1)而不是charAt(i)，因为字符串的字符index是从0开始</span></span><br><span class="line">                <span class="comment">// 到s.lenght() - 1结束的，而且按照dp数组的元素含义也应该是这样做</span></span><br><span class="line">                <span class="keyword">if</span> (word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>)) &#123;</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j] = Math.min(dp[i - <span class="number">1</span>][j - <span class="number">1</span>], Math.min(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>])) + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="解法二：递归"><a href="#解法二：递归" class="headerlink" title="解法二：递归"></a>解法二：递归</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归解法，超时了，只通过了63%的test case</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word1: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word2: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: The minimum number of steps.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">if</span> (word1.equals(word2)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> m = word1.length();</span><br><span class="line">        <span class="keyword">int</span> n = word2.length();</span><br><span class="line">        <span class="keyword">if</span> (m == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> m;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (word1.charAt(<span class="number">0</span>) == word2.charAt(<span class="number">0</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> minDistance(word1.substring(<span class="number">1</span>), word2.substring(<span class="number">1</span>));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(<span class="number">1</span> + minDistance(word1.substring(<span class="number">1</span>), word2.substring(<span class="number">1</span>)),</span><br><span class="line">                            Math.min(<span class="number">1</span> + minDistance(word1, word2.substring(<span class="number">1</span>)),</span><br><span class="line">                                     <span class="number">1</span> + minDistance(word1.substring(<span class="number">1</span>), word2)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>我用了两种数据，一是自己杜撰的$xy$二维平面上的点（以$x + y = 0$这条线为界限，右上方的点为正例，左下方的点为负例，如果模型训练正确的话，则最终的模型应该接近$x + y = 0$这条分界线），二是kaggle上的<a href="https://www.kaggle.com/adx891/sonar-data-set/version/1" target="_blank" rel="noopener">sonar data set</a>。</p>
+<h3 id="模型预测"><a href="#模型预测" class="headerlink" title="模型预测"></a>模型预测</h3><p>每个样本可以用一个$n$维特征向量$x$表示，已知模型的参数为$w$和$b$（其中$w$也是一个$n$维向量，b是一个实数），则感知机的预测结果可以用如下函数表示：<br>$$<br>f(x) = sign(wx + b) \tag{1}<br>$$<br>其中$sign(y)$是符号函数：<br>$$<br>\begin{equation}<br>sign(y) =<br>\begin{cases}<br>+1, &amp;y &gt;= 0 \<br>-1, &amp;y &lt; 0<br>\end{cases}<br>\end{equation} \tag{2}<br>$$<br>其中+1代表正例，-1代表负例。</p>
+<p>预测单个样本的类别的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">predictEachInstance</span><span class="params">(Instance instance)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; featureDimension; i++) &#123;</span><br><span class="line">        y += instance.getFeature()[i] * weights[i];</span><br><span class="line">    &#125;</span><br><span class="line">    y += bias;</span><br><span class="line">    <span class="keyword">if</span> (y &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p>感知机学习算法有两种形式：原始形式和对偶形式。</p>
+<h4 id="原始形式"><a href="#原始形式" class="headerlink" title="原始形式"></a>原始形式</h4><p>感知机训练采用的是随机梯度下降法，每次只选取一个样本($x_i$, $y_i$)，其中$x_i$代表样本的$n$维特征向量，$y_i$代表样本的类别（+1或者-1），基于当前时刻的模型参数，如果该样本没有分类错，则不对模型参数做任何修改；如果样本分类错了，则更新一次模型参数，具体的更新方法如下：<br>$$<br>\begin{eqnarray<em>}<br>w &amp;=&amp; w + \eta y_i x_i\<br>b &amp;=&amp; b + \eta y_i<br>\end{eqnarray</em>}<br>\tag{3}<br>$$<br>其中$\eta$代表学习率（0 &lt; $\eta$ &lt;= 1）。训练什么时候结束可以由两方面控制，一是我们可以设定一个训练的迭代次数(epochs)，它代表学习训练集的次数，完成学习次数之后即停止训练；二是当训练集中错误分类的样本数减少为零时，即可终止训练过程。</p>
+<p>如何判断一个样本是否预测对？由于正例和负例的类别分别是用”1”和”-1”表示的，因此当<br>$$<br>y_i(wx_i + b) &lt;= 0 \tag{4}<br>$$<br>时，则表示第$i$个样本被分类错误。</p>
+<p>训练代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">train</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> epoch = <span class="number">0</span>; epoch &lt; epochs; epoch++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (Instance instance : trainSet) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!isWrong(instance)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; featureDimension; i++) &#123;</span><br><span class="line">                weights[i] += eta * instance.getLabel() * instance.getFeature()[i];</span><br><span class="line">            &#125;</span><br><span class="line">            bias += eta * instance.getLabel();</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Instance&gt; wrongPoints = getWrongPoints();</span><br><span class="line">        <span class="keyword">if</span> (epoch % <span class="number">10</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"epoch: "</span> + epoch);</span><br><span class="line">            System.out.println(<span class="string">"wrong count: "</span> + wrongPoints.size());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (getWrongPoints().isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"weights: "</span> + Arrays.toString(weights));</span><br><span class="line">    System.out.println(<span class="string">"bias: "</span> + bias);</span><br><span class="line">    writeModelFile();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> List&lt;Instance&gt; <span class="title">getWrongPoints</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    List&lt;Instance&gt; instances = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Instance instance : trainSet) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isWrong(instance)) &#123;</span><br><span class="line">            instances.add(instance);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> instances;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isWrong</span><span class="params">(Instance instance)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> label = instance.getLabel();</span><br><span class="line">    <span class="keyword">double</span> predict = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; featureDimension; i++) &#123;</span><br><span class="line">        predict += instance.getFeature()[i] * weights[i];</span><br><span class="line">    &#125;</span><br><span class="line">    predict += bias;</span><br><span class="line">    <span class="keyword">return</span> label * predict &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>训练完成之后，我们就可以得到最终的模型参数$w$和$b$。</p>
+<h4 id="对偶形式"><a href="#对偶形式" class="headerlink" title="对偶形式"></a>对偶形式</h4><p>从感知机学习算法的原始形式中，我们可以看出，模型参数每次更新的时候，都是基于每个误分类样本来更新的：<br>$$<br>\begin{eqnarray<em>}<br>w &amp; = &amp; w + \eta y_i x_i\<br>b &amp; = &amp; b + \eta y_i<br>\end{eqnarray</em>}<br>\tag{5}<br>$$<br>假设在模型训练的过程中，我们只记录下每个样本($x_i$, $y_i$)用来更新模型参数的次数$n_i$，那么到模型训练结束的时候，最终的模型参数就可以表示为：<br>$$<br>\begin{eqnarray<em>}<br>w &amp;=&amp; \sum_{i=1}^N n_i\eta y_i x_i \<br>b &amp;=&amp; \sum_{i=1}^N n_i\eta y_i<br>\end{eqnarray</em>}<br>\tag{6}<br>$$<br>定义$\alpha_i = n_i <em> \eta$，则上述公式可以修改为：<br>$$<br>\begin{eqnarray</em>}<br>w &amp;=&amp; \sum_{i=1}^N \alpha_i y_i x_i \<br>b &amp;=&amp; \sum_{i=1}^N \alpha_i y_i<br>\end{eqnarray*}<br>\tag{7}<br>$$<br>则感知机模型的形式就可以变为：<br>$$<br>f(x) = sign(\sum_{i=1}^N\alpha_i y_i x_i \cdot x + b) \tag{8}<br>$$</p>
+<p>现在模型的参数就变为了$\alpha_i$和b了，我们在更新模型参数的时候，就可以只更新$\alpha_i$和b，如下：<br>$$<br>\begin{eqnarray<em>}<br>\alpha_i &amp;=&amp; \alpha_i + \eta \<br>b &amp;=&amp; b + \eta y_i<br>\end{eqnarray</em>}<br>\tag{8}<br>$$<br>训练代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w =</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>虽然只是写了一个很简单的demo，但是通过写代码从零开始实现机器学习算法，既可以加深对算法的理解，也可以提升自己的代码能力。我将本项目的所有代码和数据上传到github上了，地址为：<a href="https://github.com/shenhuaze/perceptron-implementation，欢迎批评指正。" target="_blank" rel="noopener">https://github.com/shenhuaze/perceptron-implementation，欢迎批评指正。</a></p>
 
       
     </div>
@@ -422,11 +419,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Coding/" rel="tag"># Coding</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
-            <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
-          
-            <a href="/tags/坐标型动态规划/" rel="tag"># 坐标型动态规划</a>
+            <a href="/tags/感知机/" rel="tag"># 感知机</a>
           
         </div>
       
@@ -439,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/05/Two-Sum/" rel="next" title="Two Sum">
-                <i class="fa fa-chevron-left"></i> Two Sum
+              <a href="/2018/07/14/git笔记/" rel="next" title="git笔记">
+                <i class="fa fa-chevron-left"></i> git笔记
               </a>
             
           </div>
@@ -448,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/10/ubuntu16.04安装jdk/" rel="prev" title="ubuntu16.04安装jdk">
-                ubuntu16.04安装jdk <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目位置"><span class="nav-number">1.</span> <span class="nav-text">题目位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">3.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析"><span class="nav-number">4.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考代码"><span class="nav-number">5.</span> <span class="nav-text">参考代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法一：动态规划"><span class="nav-number">5.1.</span> <span class="nav-text">解法一：动态规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法二：递归"><span class="nav-number">5.2.</span> <span class="nav-text">解法二：递归</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集"><span class="nav-number">1.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型预测"><span class="nav-number">2.</span> <span class="nav-text">模型预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型训练"><span class="nav-number">3.</span> <span class="nav-text">模型训练</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原始形式"><span class="nav-number">3.1.</span> <span class="nav-text">原始形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对偶形式"><span class="nav-number">3.2.</span> <span class="nav-text">对偶形式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
