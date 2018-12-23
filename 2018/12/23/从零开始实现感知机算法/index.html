@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="申化泽的个人网站">
 <meta property="og:description" content="感知机（perceptron）的原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms），例如中文分词、词性标注以及命名实体识别。为了加深对算法的理解，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-23T08:11:45.033Z">
+<meta property="og:updated_time" content="2018-12-23T08:17:47.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始实现感知机算法">
 <meta name="twitter:description" content="感知机（perceptron）的原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms），例如中文分词、词性标注以及命名实体识别。为了加深对算法的理解，">
@@ -388,7 +388,7 @@
       
         <p>感知机（perceptron）的原理简单而直观。感知机最常见的应用就是分类问题，最近才了解到，它还可以用于序列标注问题（<a href="http://www.aclweb.org/anthology/W02-1001" target="_blank" rel="noopener">Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms</a>），例如中文分词、词性标注以及命名实体识别。为了加深对算法的理解，我决定动手写代码实现一下感知机如何用于最简单的二分类问题，原理主要参考的是李航《统计学习方法》第二章的内容。</p>
 <a id="more"></a>
-<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>我用了两种数据，一是自己杜撰的$xy$二维平面上的点（以$x + y = 0$这条线为界限，右上方的点为正例，左下方的点为负例，如果模型训练正确的话，则最终的模型应该接近$x + y = 0$这条分界线），二是kaggle上的<a href="https://www.kaggle.com/adx891/sonar-data-set/version/1" target="_blank" rel="noopener">sonar data set</a>。</p>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>我用了两种数据：一是自己杜撰的$xy$二维平面上的点（以$x + y = 0$这条线为界限，右上方的点为正例，左下方的点为负例，如果模型训练正确的话，则最终的模型应该接近$x + y = 0$这条分界线）；二是kaggle上的<a href="https://www.kaggle.com/adx891/sonar-data-set/version/1" target="_blank" rel="noopener">sonar data set</a>。</p>
 <h3 id="模型预测"><a href="#模型预测" class="headerlink" title="模型预测"></a>模型预测</h3><p>每个样本可以用一个$n$维特征向量$x$表示，已知模型的参数为$w$和$b$（其中$w$也是一个$n$维向量，b是一个实数），则感知机的预测结果可以用如下函数表示：</p>
 <script type="math/tex; mode=display">
 f(x) = sign(wx + b) \tag{1}</script><p>其中$sign(y)$是符号函数：</p>
@@ -396,7 +396,7 @@ f(x) = sign(wx + b) \tag{1}</script><p>其中$sign(y)$是符号函数：</p>
 \begin{equation}
 sign(y) =
 \begin{cases}
-+1, &y >= 0 \\
++1, &y \geq 0 \\
 -1, &y < 0
 \end{cases}
 \end{equation} \tag{2}</script><p>其中+1代表正例，-1代表负例。</p>
