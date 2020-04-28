@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="对XLNet的几点理解：  以GPT2为代表的自回归（autoregressive, AR）语言模型：  缺点是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。 优点是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文">
+<meta name="description" content="对XLNet的几点理解：">
 <meta name="keywords" content="XLNet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XLNet笔记">
 <meta property="og:url" content="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="对XLNet的几点理解：  以GPT2为代表的自回归（autoregressive, AR）语言模型：  缺点是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。 优点是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文">
+<meta property="og:description" content="对XLNet的几点理解：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-28T16:58:25.408Z">
+<meta property="og:updated_time" content="2020-04-28T17:02:47.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XLNet笔记">
-<meta name="twitter:description" content="对XLNet的几点理解：  以GPT2为代表的自回归（autoregressive, AR）语言模型：  缺点是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。 优点是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文">
+<meta name="twitter:description" content="对XLNet的几点理解：">
 
 
 
@@ -387,6 +387,7 @@
 
       
         <p>对XLNet的几点理解：</p>
+<a id="more"></a>
 <ul>
 <li><p>以GPT2为代表的自回归（autoregressive, AR）语言模型：</p>
 <ul>
