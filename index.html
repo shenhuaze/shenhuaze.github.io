@@ -261,6 +261,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.coding.me/2020/04/28/Transformer笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="申化泽的个人网站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/28/Transformer笔记/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T13:45:27+08:00">
+                2020-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自然语言处理/" itemprop="url" rel="index">
+                    <span itemprop="name">自然语言处理</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自然语言处理/Transformer/" itemprop="url" rel="index">
+                    <span itemprop="name">Transformer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/28/Transformer笔记/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如下图，Transformer的结构分成左右两部分，左边是Encoder（可以多个Encoder重叠在一起），右边是Decoder（可以多个Decoder重叠在一起）。</p>
+<p>Encoder由self-attention层和feed-forward层组成。对于self-attention层，每个token的输入向量，都分别乘以W<sub>Q</sub>, W<sub>K</sub>, W<sub>V</sub>矩阵，得到query, key, value向量。当前token的query向量，去乘以每个位置的key向量，然后做softmax，得到当前位置对每个位置的attention分数，然后用每个位置的attention分数与每个位置的value向量，做加权求和，就得到了当前位置的输出向量，再讲输入向量与输出向量相加，再做Layer-Normalization，就得到了self-attention层整体的输出向量。实际应用中，可能会使用multi-head self-attention，意思就是，对于每个token，可以计算多组不同的query, key, value向量，得到不同的输出向量，然后拼接在一起，然后再乘以一个矩阵，得到输出向量。对于feed-forward层，以self-attention的输出向量作为输入向量，经过全连接网络，得到输出向量，然后将输入向量与输出向量相加再做Layer-Normalization，就得到了feed-forward层整体的输出向量，该输出向量，可以作为下一个Encoder的输入，也可以作为Decoder的输入。</p>
+<p>Decoder与Encoder的结构差不多，只是在self-attention层与feed-forwrd层之间，多了一个encoder-decoder attention层。encoder-decoder attention层的输入向量乘以W<sub>Q</sub>矩阵矩阵，得到query向量，然后利用最后一个encoder的输出向量，乘以W<sub>K</sub>, W<sub>V</sub>矩阵矩阵，得到key, value向量，用当前token的query向量，去乘以encoder每个位置的key向量，然后做softmax，得到当前token对于输入序列每个位置的attention分数，然后用输入序列每个位置的attention分数与每个位置的value向量，做加权求和，得到当前token的输出向量。最后一个decoder的输出向量，乘以一个转换矩阵，得到vocab维度的输出向量，再做一个softmax，选取概率最大的token，作为输出。然后把当前位置的输出，作为下一个位置的输入。Decoder里面，在计算self-attention的时候，需要mask当前位置之后的token，具体做法就是在做softmax之前，将当前位置之后的token的数值，都设为负无穷大，softmax之后的分数就为0了。</p>
+<p><img src="C:\Users\shenhuaze\Desktop\ubuntu_workspace\projects\markdown\shenhuaze.github.io\source\_posts\pics\transformer\1.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://shenhuaze.coding.me/2019/02/01/Random-Pick-with-Weight/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1738,174 +1905,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.coding.me/2018/05/06/Edit-Distance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="申化泽的个人网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/Edit-Distance/" itemprop="url">Edit Distance</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-06T10:34:46+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/" itemprop="url" rel="index">
-                    <span itemprop="name">Coding</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/Dynamic-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Dynamic Programming</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/06/Edit-Distance/" class="leancloud_visitors" data-flag-title="Edit Distance">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="题目位置"><a href="#题目位置" class="headerlink" title="题目位置"></a>题目位置</h3><p><a href="http://www.lintcode.com/en/problem/edit-distance/" target="_blank" rel="noopener">http://www.lintcode.com/en/problem/edit-distance/</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/06/Edit-Distance/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1956,7 +1955,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1967,7 +1966,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1978,7 +1977,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
