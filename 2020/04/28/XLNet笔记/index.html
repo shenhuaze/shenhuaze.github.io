@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Ubuntu,jdk," />
+  <meta name="keywords" content="XLNet," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="安装Oracle JDK">
-<meta name="keywords" content="Ubuntu,jdk">
+<meta name="description" content="对XLNet的几点理解：  以GPT2为代表的自回归（autoregressive, AR）语言模型：  缺点是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。 优点是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文">
+<meta name="keywords" content="XLNet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu16.04安装jdk">
-<meta property="og:url" content="http://shenhuaze.gitee.io/2018/05/10/ubuntu16.04安装jdk/index.html">
+<meta property="og:title" content="XLNet笔记">
+<meta property="og:url" content="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="安装Oracle JDK">
+<meta property="og:description" content="对XLNet的几点理解：  以GPT2为代表的自回归（autoregressive, AR）语言模型：  缺点是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。 优点是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-10T04:45:44.910Z">
+<meta property="og:updated_time" content="2020-04-28T16:58:25.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu16.04安装jdk">
-<meta name="twitter:description" content="安装Oracle JDK">
+<meta name="twitter:title" content="XLNet笔记">
+<meta name="twitter:description" content="对XLNet的几点理解：  以GPT2为代表的自回归（autoregressive, AR）语言模型：  缺点是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。 优点是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.gitee.io/2018/05/10/ubuntu16.04安装jdk/"/>
+  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/"/>
 
 
 
 
 
-  <title>ubuntu16.04安装jdk | 申化泽的个人网站</title>
+  <title>XLNet笔记 | 申化泽的个人网站</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2018/05/10/ubuntu16.04安装jdk/">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu16.04安装jdk</h1>
+          <h1 class="post-title" itemprop="name headline">XLNet笔记</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-10T12:06:57+08:00">
-                2018-05-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T22:34:15+08:00">
+                2020-04-28
               </time>
             
 
@@ -317,8 +317,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/categories/NLP/" itemprop="url" rel="index">
+                    <span itemprop="name">NLP</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NLP/XLNet/" itemprop="url" rel="index">
+                    <span itemprop="name">XLNet</span>
                   </a>
                 </span>
 
@@ -335,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/10/ubuntu16.04安装jdk/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/10/ubuntu16.04安装jdk/" itemprop="commentsCount"></span>
+                <a href="/2020/04/28/XLNet笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/04/28/XLNet笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -344,7 +355,7 @@
 
           
           
-             <span id="/2018/05/10/ubuntu16.04安装jdk/" class="leancloud_visitors" data-flag-title="ubuntu16.04安装jdk">
+             <span id="/2020/04/28/XLNet笔记/" class="leancloud_visitors" data-flag-title="XLNet笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,15 +386,46 @@
       
 
       
-        <h3 id="安装Oracle-JDK"><a href="#安装Oracle-JDK" class="headerlink" title="安装Oracle JDK"></a>安装Oracle JDK</h3><a id="more"></a>
-<p>参考<a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04" target="_blank" rel="noopener">此网页</a></p>
-<p>步骤：</p>
-<ol>
-<li><code>sudo add-apt-repository ppa:webupd8team/java</code></li>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt-get install oracle-java8-installer</code></li>
-</ol>
-<p>第三步的时候遇到了<code>could not get lock /var/lib/dpkg/lock</code>的报错，参考<a href="https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process" target="_blank" rel="noopener">此网页</a>解决。</p>
+        <p>对XLNet的几点理解：</p>
+<ul>
+<li><p>以GPT2为代表的自回归（autoregressive, AR）语言模型：</p>
+<ul>
+<li><strong>缺点</strong>是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。</li>
+<li><strong>优点</strong>是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文本生成、机器翻译等。</li>
+</ul>
+</li>
+<li><p>以BERT为代表的自编码（autoencoding, AE）语言模型（对某些token做了MASK）：</p>
+<ul>
+<li><strong>缺点一</strong>是在预训练的时候有MASK，但是在下游的NLP任务中却没有MASK，导致预训练与finetune之间有一个gap。</li>
+<li><strong>缺点二</strong>是由于对某些token做了MASK，因此不能像自回归语言模型那样，将联合概率分解为条件概率连乘的形式，对联合概率进行建模。换句话说，BERT假设，在给定那些没有MASK的tokens的条件下，那些待预测的带MASK的token之间是相互独立的，这过于简化了NLP任务中普遍存在的高阶、长程关联；</li>
+<li><strong>缺点三</strong>是不能对这些做了MASK的tokens之间的关系进行学习。</li>
+<li><strong>优点</strong>是可以同时学到双向的上下文信息，弥补了AR语言模型只能学习单向上下文信息的不足。</li>
+</ul>
+</li>
+<li><p>XLNet既吸收了AR语言模型和AE语言模型的优点，又避免了它们的缺点，提出Permutation Language Model（PLM，排列语言模型），是一种广义的AR语言模型。</p>
+<ul>
+<li><p>对于PLM，我的理解是，给定一个序列，比如<code>&quot;今天要下雨&quot;</code>这句话，自回归语言模型就是最大化<code>P(今天要下雨)</code>的概率，传统的正向自回归语言模型将<code>P(今天要下雨)</code>表示为<code>P(今)P(天|今)P(要|今天)P(下|今天要)P(雨|今天要下)</code>，如果考虑反向的自回归语言模型，可以将<code>P(今天要下雨)</code>表示为<code>P(雨)P(下|雨)P(要|下雨)P(天|要下雨)P(今|天要下雨)</code>。如果只考虑正向和反向，感觉还不能把<code>&quot;今天要下雨&quot;</code>这句话的信息进行最大化利用，比如我们还可以将<code>P(今天要下雨)</code>表示为<code>P(天2)P(下4|天2)P(要3|天2下4)P(雨5|天2下4要3)P(今1|天2下4要3雨5)</code>，其中<code>P(天2)</code>表示<code>&quot;天&quot;</code>出现在位置2的概率，<code>P(下4|天2)</code>表示<code>&quot;天&quot;</code>出现在位置2的条件下，<code>&quot;下&quot;</code>出现在位置4的概率，<code>P(要3|天2下4)</code>表示<code>&quot;天&quot;</code>出现在位置2且<code>&quot;下&quot;</code>出现在位置4的条件下，<code>&quot;要&quot;</code>出现在位置3的概率，以此类推。。可以发现两个有意思的地方：</p>
+<ul>
+<li>正向和反向自回归语言模型，实际上是PLM的两种特殊情况，比如正向自回归语言模型<code>P(今)P(天|今)P(要|今天)P(下|今天要)P(雨|今天要下)</code>，可以表示为：<code>P(今1)P(天2|今1)P(要3|今1天2)P(下4|今1天2要3)P(雨5|今1天2要3下4)</code>，而反向自回归语言模型<code>P(雨)P(下|雨)P(要|下雨)P(天|要下雨)P(今|天要下雨)</code>，可以表示为：<code>P(雨5)P(下4|雨5)P(要3|下4雨5)P(天2|要3下4雨5)P(今1|天2要3下4雨5)</code>。如果考虑所有的排列情况，就可以将<code>&quot;今天要下雨&quot;</code>这句话所蕴含的信息学得非常充分。</li>
+<li>考虑<code>P(要3|天2下4)</code>这个概率，实际上就已经把两侧的上下文信息，包含到语言模型里了。</li>
+</ul>
+</li>
+<li><p>PLM弥补了BERT的缺点，即不用对任何token做MASK，一是不会造成预训练与finetune之间的gap，二是避免了BERT中对于MASK的tokens的独立性假设，可以对联合概率进行建模。</p>
+</li>
+<li>PML弥补了GPT的缺点，可以同时学到双向的上下文信息。</li>
+</ul>
+</li>
+<li><p>除了语言模型（任务目标）的创新，XLNet还优化了预训练模型的结构。</p>
+<ul>
+<li>使用了Transfomer-XL，引入segment recurrence mechanism and relative encoding scheme，可以提升长程关联任务的表现。</li>
+<li>对Transfomer-XL进行reparameterize，以适应PLM任务。</li>
+</ul>
+</li>
+<li><p>XLNet-Base和Bert-Base训练预料是一样的。XLNet-Large的训练预料是XLNet-Base的10倍。</p>
+</li>
+<li><p>XLNet计算量和激活值比BERT更大，有可能接近BERT的2倍。</p>
+</li>
+</ul>
 
       
     </div>
@@ -401,9 +443,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
-          
-            <a href="/tags/jdk/" rel="tag"># jdk</a>
+            <a href="/tags/XLNet/" rel="tag"># XLNet</a>
           
         </div>
       
@@ -416,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/06/Edit-Distance/" rel="next" title="Edit Distance">
-                <i class="fa fa-chevron-left"></i> Edit Distance
+              <a href="/2020/04/28/Transformer笔记/" rel="next" title="Transformer笔记">
+                <i class="fa fa-chevron-left"></i> Transformer笔记
               </a>
             
           </div>
@@ -425,10 +465,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/15/HMM与Viterbi算法的Java实现/" rel="prev" title="HMM与Viterbi算法的Java实现">
-                HMM与Viterbi算法的Java实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -487,17 +523,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -574,22 +601,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Oracle-JDK"><span class="nav-number">1.</span> <span class="nav-text">安装Oracle JDK</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
