@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="FM," />
 
 
 
@@ -81,13 +81,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="申化泽的个人网站">
-<meta property="og:url" content="http://shenhuaze.gitee.io/categories/机器学习/index.html">
+<meta name="description" content="FM是Factorization Machines的简称，可以自动学习特征之间的二阶交互，比线性回归（逻辑回归）多了一个特征之间的二阶交互项。">
+<meta name="keywords" content="FM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FM笔记">
+<meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/04/FM笔记/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
+<meta property="og:description" content="FM是Factorization Machines的简称，可以自动学习特征之间的二阶交互，比线性回归（逻辑回归）多了一个特征之间的二阶交互项。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://shenhuaze.gitee.io/2020/05/04/FM笔记/Users/shenhuaze/Desktop/ubuntu_workspace/projects/markdown/shenhuaze.github.io/source/_posts/FM笔记/1.png">
+<meta property="og:image" content="http://shenhuaze.gitee.io/2020/05/04/FM笔记/Users/shenhuaze/Desktop/ubuntu_workspace/projects/markdown/shenhuaze.github.io/source/_posts/FM笔记/2.png">
+<meta property="og:updated_time" content="2020-05-04T13:29:47.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="申化泽的个人网站">
+<meta name="twitter:title" content="FM笔记">
+<meta name="twitter:description" content="FM是Factorization Machines的简称，可以自动学习特征之间的二阶交互，比线性回归（逻辑回归）多了一个特征之间的二阶交互项。">
+<meta name="twitter:image" content="http://shenhuaze.gitee.io/2020/05/04/FM笔记/Users/shenhuaze/Desktop/ubuntu_workspace/projects/markdown/shenhuaze.github.io/source/_posts/FM笔记/1.png">
 
 
 
@@ -117,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.gitee.io/categories/机器学习/"/>
+  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/05/04/FM笔记/"/>
 
 
 
 
 
-  <title>Category: 机器学习 | 申化泽的个人网站</title>
+  <title>FM笔记 | 申化泽的个人网站</title>
   
 
 
@@ -142,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,55 +254,207 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>机器学习<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/05/04/FM笔记/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="申化泽的个人网站">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/23/基于感知机算法实现二分类/" itemprop="url">
-              
-                <span itemprop="name">基于感知机算法实现二分类</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">FM笔记</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-23T10:10:47+08:00"
-              content="2018-12-23" >
-          12-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-04T21:14:48+08:00">
+                2020-05-04
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/CTR/" itemprop="url" rel="index">
+                    <span itemprop="name">CTR</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/04/FM笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/04/FM笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/04/FM笔记/" class="leancloud_visitors" data-flag-title="FM笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>FM是Factorization Machines的简称，可以自动学习特征之间的二阶交互，比线性回归（逻辑回归）多了一个特征之间的二阶交互项。</p>
+<a id="more"></a>
+<p>FM的公式如下图：</p>
+<p><img src="//shenhuaze.gitee.io/2020/05/04/FM笔记/Users\shenhuaze\Desktop\ubuntu_workspace\projects\markdown\shenhuaze.github.io\source\_posts\FM笔记\1.png" alt="1"></p>
+<p>其中的模型参数为：</p>
+<p><img src="//shenhuaze.gitee.io/2020/05/04/FM笔记/Users\shenhuaze\Desktop\ubuntu_workspace\projects\markdown\shenhuaze.github.io\source\_posts\FM笔记\2.png" alt=""></p>
+<p>第i个特征与第j个特征的交互权重，通过隐向量<strong>V<sub>i</sub></strong>和<strong>V<sub>j</sub></strong>的内积得到。模型的参数(w<sub>0</sub>, <strong>w</strong>, <strong>V</strong>)都可以通过训练得到。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FM/" rel="tag"># FM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/04/BERT笔记/" rel="next" title="BERT笔记">
+                <i class="fa fa-chevron-left"></i> BERT笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -302,6 +462,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -540,6 +711,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -586,6 +761,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'shenhuaze',
+            repo: 'shenhuaze.github.io',
+            
+            lang: "en" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '614125af3ffdaf65d9fd68370a9b76ce368e6eca',
+            
+                client_id: 'c408b9a7c0327a06f429'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
