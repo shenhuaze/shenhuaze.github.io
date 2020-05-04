@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shenhuaze.gitee.io/2018/05/20/MMSeg%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E7%AE%97%E6%B3%95%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2020-05-04T13:39:31.517Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shenhuaze.gitee.io/2018/05/15/HMM%E4%B8%8EViterbi%E7%AE%97%E6%B3%95%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2020-05-04T13:39:11.409Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shenhuaze.gitee.io/2018/05/20/%E5%8F%AA%E5%8C%85%E5%90%AB%E8%8B%B1%E6%96%87%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D%E7%9A%84trie%E6%A0%91%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2020-05-04T13:38:50.442Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shenhuaze.gitee.io/2018/06/06/trie%E6%A0%91%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6/</loc>
+    
+    <lastmod>2020-05-04T13:38:21.857Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://shenhuaze.gitee.io/2020/05/04/FM%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2020-05-04T13:33:50.511Z</lastmod>
@@ -58,20 +86,6 @@
   </url>
   
   <url>
-    <loc>http://shenhuaze.gitee.io/2018/06/06/trie%E6%A0%91%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6/</loc>
-    
-    <lastmod>2018-06-07T14:03:59.970Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shenhuaze.gitee.io/2018/05/15/HMM%E4%B8%8EViterbi%E7%AE%97%E6%B3%95%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2018-05-28T14:42:50.550Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://shenhuaze.gitee.io/2018/05/06/Edit-Distance/</loc>
     
     <lastmod>2018-05-27T10:06:36.876Z</lastmod>
@@ -82,20 +96,6 @@
     <loc>http://shenhuaze.gitee.io/2018/05/27/Binary-Tree-Level-Order-Traversal/</loc>
     
     <lastmod>2018-05-27T09:49:45.843Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shenhuaze.gitee.io/2018/05/20/MMSeg%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E7%AE%97%E6%B3%95%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2018-05-21T09:44:42.258Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shenhuaze.gitee.io/2018/05/20/%E5%8F%AA%E5%8C%85%E5%90%AB%E8%8B%B1%E6%96%87%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D%E7%9A%84trie%E6%A0%91%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2018-05-20T14:18:48.820Z</lastmod>
     
   </url>
   
