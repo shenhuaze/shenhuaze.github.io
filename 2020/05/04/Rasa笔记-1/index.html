@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="XLNet," />
+  <meta name="keywords" content="Rasa," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="对XLNet的几点理解：">
-<meta name="keywords" content="XLNet">
+<meta name="description" content="Rasa是一个开源的对话机器人框架，可以实现任务型多轮对话，也支持FAQ形式的对话。">
+<meta name="keywords" content="Rasa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XLNet笔记">
-<meta property="og:url" content="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/index.html">
+<meta property="og:title" content="Rasa笔记-1">
+<meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/04/Rasa笔记-1/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="对XLNet的几点理解：">
+<meta property="og:description" content="Rasa是一个开源的对话机器人框架，可以实现任务型多轮对话，也支持FAQ形式的对话。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-28T17:02:47.003Z">
+<meta property="og:updated_time" content="2020-05-04T14:47:43.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XLNet笔记">
-<meta name="twitter:description" content="对XLNet的几点理解：">
+<meta name="twitter:title" content="Rasa笔记-1">
+<meta name="twitter:description" content="Rasa是一个开源的对话机器人框架，可以实现任务型多轮对话，也支持FAQ形式的对话。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/"/>
+  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/05/04/Rasa笔记-1/"/>
 
 
 
 
 
-  <title>XLNet笔记 | 申化泽的个人网站</title>
+  <title>Rasa笔记-1 | 申化泽的个人网站</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/04/28/XLNet笔记/">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/05/04/Rasa笔记-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">XLNet笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Rasa笔记-1</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T22:34:15+08:00">
-                2020-04-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-04T21:45:04+08:00">
+                2020-05-04
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NLP/" itemprop="url" rel="index">
-                    <span itemprop="name">NLP</span>
+                  <a href="/categories/对话机器人/" itemprop="url" rel="index">
+                    <span itemprop="name">对话机器人</span>
                   </a>
                 </span>
 
@@ -328,8 +328,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NLP/XLNet/" itemprop="url" rel="index">
-                    <span itemprop="name">XLNet</span>
+                  <a href="/categories/对话机器人/Rasa/" itemprop="url" rel="index">
+                    <span itemprop="name">Rasa</span>
                   </a>
                 </span>
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/28/XLNet笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/04/28/XLNet笔记/" itemprop="commentsCount"></span>
+                <a href="/2020/05/04/Rasa笔记-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/04/Rasa笔记-1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,7 +355,7 @@
 
           
           
-             <span id="/2020/04/28/XLNet笔记/" class="leancloud_visitors" data-flag-title="XLNet笔记">
+             <span id="/2020/05/04/Rasa笔记-1/" class="leancloud_visitors" data-flag-title="Rasa笔记-1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,47 +386,97 @@
       
 
       
-        <p>对XLNet的几点理解：</p>
+        <p>Rasa是一个开源的对话机器人框架，可以实现任务型多轮对话，也支持FAQ形式的对话。</p>
 <a id="more"></a>
-<ul>
-<li><p>以GPT2为代表的自回归（autoregressive, AR）语言模型：</p>
-<ul>
-<li><strong>缺点</strong>是只能学到单向的上下文信息（要么从前往后，要么从后往前），不能同时学到双向的上下文信息，但是很多下游的NLP任务都是需要同时考虑双向的上下文信息的。</li>
-<li><strong>优点</strong>是没有MASK，不会缺失信息，而且保留了顺序信息，可以对联合概率进行建模。可以处理BERT处理不了的一些需要考虑顺序的NLP任务，比如文本生成、机器翻译等。</li>
-</ul>
-</li>
-<li><p>以BERT为代表的自编码（autoencoding, AE）语言模型（对某些token做了MASK）：</p>
-<ul>
-<li><strong>缺点一</strong>是在预训练的时候有MASK，但是在下游的NLP任务中却没有MASK，导致预训练与finetune之间有一个gap。</li>
-<li><strong>缺点二</strong>是由于对某些token做了MASK，因此不能像自回归语言模型那样，将联合概率分解为条件概率连乘的形式，对联合概率进行建模。换句话说，BERT假设，在给定那些没有MASK的tokens的条件下，那些待预测的带MASK的token之间是相互独立的，这过于简化了NLP任务中普遍存在的高阶、长程关联；</li>
-<li><strong>缺点三</strong>是不能对这些做了MASK的tokens之间的关系进行学习。</li>
-<li><strong>优点</strong>是可以同时学到双向的上下文信息，弥补了AR语言模型只能学习单向上下文信息的不足。</li>
-</ul>
-</li>
-<li><p>XLNet既吸收了AR语言模型和AE语言模型的优点，又避免了它们的缺点，提出Permutation Language Model（PLM，排列语言模型），是一种广义的AR语言模型。</p>
-<ul>
-<li><p>对于PLM，我的理解是，给定一个序列，比如<code>&quot;今天要下雨&quot;</code>这句话，自回归语言模型就是最大化<code>P(今天要下雨)</code>的概率，传统的正向自回归语言模型将<code>P(今天要下雨)</code>表示为<code>P(今)P(天|今)P(要|今天)P(下|今天要)P(雨|今天要下)</code>，如果考虑反向的自回归语言模型，可以将<code>P(今天要下雨)</code>表示为<code>P(雨)P(下|雨)P(要|下雨)P(天|要下雨)P(今|天要下雨)</code>。如果只考虑正向和反向，感觉还不能把<code>&quot;今天要下雨&quot;</code>这句话的信息进行最大化利用，比如我们还可以将<code>P(今天要下雨)</code>表示为<code>P(天2)P(下4|天2)P(要3|天2下4)P(雨5|天2下4要3)P(今1|天2下4要3雨5)</code>，其中<code>P(天2)</code>表示<code>&quot;天&quot;</code>出现在位置2的概率，<code>P(下4|天2)</code>表示<code>&quot;天&quot;</code>出现在位置2的条件下，<code>&quot;下&quot;</code>出现在位置4的概率，<code>P(要3|天2下4)</code>表示<code>&quot;天&quot;</code>出现在位置2且<code>&quot;下&quot;</code>出现在位置4的条件下，<code>&quot;要&quot;</code>出现在位置3的概率，以此类推。。可以发现两个有意思的地方：</p>
-<ul>
-<li>正向和反向自回归语言模型，实际上是PLM的两种特殊情况，比如正向自回归语言模型<code>P(今)P(天|今)P(要|今天)P(下|今天要)P(雨|今天要下)</code>，可以表示为：<code>P(今1)P(天2|今1)P(要3|今1天2)P(下4|今1天2要3)P(雨5|今1天2要3下4)</code>，而反向自回归语言模型<code>P(雨)P(下|雨)P(要|下雨)P(天|要下雨)P(今|天要下雨)</code>，可以表示为：<code>P(雨5)P(下4|雨5)P(要3|下4雨5)P(天2|要3下4雨5)P(今1|天2要3下4雨5)</code>。如果考虑所有的排列情况，就可以将<code>&quot;今天要下雨&quot;</code>这句话所蕴含的信息学得非常充分。</li>
-<li>考虑<code>P(要3|天2下4)</code>这个概率，实际上就已经把两侧的上下文信息，包含到语言模型里了。</li>
-</ul>
-</li>
-<li><p>PLM弥补了BERT的缺点，即不用对任何token做MASK，一是不会造成预训练与finetune之间的gap，二是避免了BERT中对于MASK的tokens的独立性假设，可以对联合概率进行建模。</p>
-</li>
-<li>PML弥补了GPT的缺点，可以同时学到双向的上下文信息。</li>
-</ul>
-</li>
-<li><p>除了语言模型（任务目标）的创新，XLNet还优化了预训练模型的结构。</p>
-<ul>
-<li>使用了Transfomer-XL，引入segment recurrence mechanism and relative encoding scheme，可以提升长程关联任务的表现。</li>
-<li>对Transfomer-XL进行reparameterize，以适应PLM任务。</li>
-</ul>
-</li>
-<li><p>XLNet-Base和Bert-Base训练预料是一样的。XLNet-Large的训练预料是XLNet-Base的10倍。</p>
-</li>
-<li><p>XLNet计算量和激活值比BERT更大，有可能接近BERT的2倍。</p>
-</li>
-</ul>
+<p>这里介绍一下如何创建一个最基础的Rasa机器人，以及构建一个Rasa项目所需要的一些文件。</p>
+<h2 id="创建一个新项目"><a href="#创建一个新项目" class="headerlink" title="创建一个新项目"></a>创建一个新项目</h2><p>安装完Rasa后，新建一个目录，例如<code>my_rasa_bot</code>，然后进入这个目录。</p>
+<p>在命令行输入以下命令，这条命令会自动创建一些必要的文件和样例数据，然后训练Rasa core和Rasa NLU模型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rasa init --no-prompt</span><br></pre></td></tr></table></figure>
+<p>命令运行完之后，在<code>my_rasa_bot</code>目录下，会出现以下一些文件：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__init__.py</code></td>
+<td>an empty file that helps python find your actions</td>
+</tr>
+<tr>
+<td><code>actions.py</code></td>
+<td>code for your custom actions (自定义action的代码)</td>
+</tr>
+<tr>
+<td><strong><code>config.yml</code></strong></td>
+<td>configuration of your NLU and Core models (NLU和Core模型的配置文件)</td>
+</tr>
+<tr>
+<td><code>credentials.yml</code></td>
+<td>details for connecting to other services (连接其他服务的一些细节信息)</td>
+</tr>
+<tr>
+<td><strong><code>data/nlu.md</code></strong></td>
+<td>your NLU training data (NLU训练数据)</td>
+</tr>
+<tr>
+<td><strong><code>data/stories.md</code></strong></td>
+<td>your stories (story数据，用于训练Core模型)</td>
+</tr>
+<tr>
+<td><strong><code>domain.yml</code></strong></td>
+<td>your assistant’s domain (机器人的domain文件，包括机器人支持的意图、实体、action等等信息)</td>
+</tr>
+<tr>
+<td><code>endpoints.yml</code></td>
+<td>details for connecting to channels like fb messenger (连接一些通道，比如fb messenger，的细节信息)</td>
+</tr>
+<tr>
+<td><code>models/&lt;timestamp&gt;.tar.gz</code></td>
+<td>your initial model (训练好的模型)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中，用黑色加粗的文件<code>config.yml</code>, <code>nlu.md</code>, <code>stories.md</code>, <code>domain.yml</code>，是最重要的文件。</p>
+<h2 id="查看nlu-md"><a href="#查看nlu-md" class="headerlink" title="查看nlu.md"></a>查看nlu.md</h2><p>nlu.md里面存放了NLU的训练数据，用来训练NLU模型。NLU数据主要包含每句话的意图信息和实体信息。NLU模型主要做两件事情，意图分类和实体识别。nlu.md的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">## intent:greet</span><br><span class="line">- hey</span><br><span class="line">- hello</span><br><span class="line">- hi</span><br><span class="line">- good morning</span><br><span class="line">- good evening</span><br><span class="line">- hey there</span><br><span class="line"></span><br><span class="line">## intent:goodbye</span><br><span class="line">- bye</span><br><span class="line">- goodbye</span><br><span class="line">- see you around</span><br><span class="line">- see you later</span><br><span class="line"></span><br><span class="line">## intent:affirm</span><br><span class="line">- yes</span><br><span class="line">- indeed</span><br><span class="line">- of course</span><br><span class="line">- that sounds good</span><br><span class="line">- correct</span><br><span class="line"></span><br><span class="line">## intent:deny</span><br><span class="line">- no</span><br><span class="line">- never</span><br><span class="line">- I don&apos;t think so</span><br><span class="line">- don&apos;t like that</span><br><span class="line">- no way</span><br><span class="line">- not really</span><br><span class="line"></span><br><span class="line">## intent:mood_great</span><br><span class="line">- perfect</span><br><span class="line">- very good</span><br><span class="line">- great</span><br><span class="line">- amazing</span><br><span class="line">- wonderful</span><br><span class="line">- I am feeling very good</span><br><span class="line">- I am great</span><br><span class="line">- I&apos;m good</span><br><span class="line"></span><br><span class="line">## intent:mood_unhappy</span><br><span class="line">- sad</span><br><span class="line">- very sad</span><br><span class="line">- unhappy</span><br><span class="line">- bad</span><br><span class="line">- very bad</span><br><span class="line">- awful</span><br><span class="line">- terrible</span><br><span class="line">- not very good</span><br><span class="line">- extremely sad</span><br><span class="line">- so sad</span><br><span class="line"></span><br><span class="line">## intent:bot_challenge</span><br><span class="line">- are you a bot?</span><br><span class="line">- are you a human?</span><br><span class="line">- am I talking to a bot?</span><br><span class="line">- am I talking to a human?</span><br></pre></td></tr></table></figure>
+<p>以<code>##</code>开头的行用来定义意图，每个意图的所有数据放到一起。</p>
+<h2 id="查看config-yml"><a href="#查看config-yml" class="headerlink" title="查看config.yml"></a>查看config.yml</h2><p>config.yml里面存放了NLU模型和Core模型的一些配置信息。config.yml的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Configuration for Rasa NLU.</span><br><span class="line"># https://rasa.com/docs/rasa/nlu/components/</span><br><span class="line">language: en</span><br><span class="line">pipeline: supervised_embeddings</span><br><span class="line"></span><br><span class="line"># Configuration for Rasa Core.</span><br><span class="line"># https://rasa.com/docs/rasa/core/policies/</span><br><span class="line">policies:</span><br><span class="line">  - name: MemoizationPolicy</span><br><span class="line">  - name: KerasPolicy</span><br><span class="line">  - name: MappingPolicy</span><br></pre></td></tr></table></figure>
+<h2 id="查看stories-md"><a href="#查看stories-md" class="headerlink" title="查看stories.md"></a>查看stories.md</h2><p>stories.md里存放了story数据。每个story由用户的结构化信息（包括意图和实体）与机器人的action组成，可能会交互多轮。story数据用来训练Core模型。stories.md的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">## happy path</span><br><span class="line">* greet</span><br><span class="line">  - utter_greet</span><br><span class="line">* mood_great</span><br><span class="line">  - utter_happy</span><br><span class="line"></span><br><span class="line">## sad path 1</span><br><span class="line">* greet</span><br><span class="line">  - utter_greet</span><br><span class="line">* mood_unhappy</span><br><span class="line">  - utter_cheer_up</span><br><span class="line">  - utter_did_that_help</span><br><span class="line">* affirm</span><br><span class="line">  - utter_happy</span><br><span class="line"></span><br><span class="line">## sad path 2</span><br><span class="line">* greet</span><br><span class="line">  - utter_greet</span><br><span class="line">* mood_unhappy</span><br><span class="line">  - utter_cheer_up</span><br><span class="line">  - utter_did_that_help</span><br><span class="line">* deny</span><br><span class="line">  - utter_goodbye</span><br><span class="line"></span><br><span class="line">## say goodbye</span><br><span class="line">* goodbye</span><br><span class="line">  - utter_goodbye</span><br><span class="line"></span><br><span class="line">## bot challenge</span><br><span class="line">* bot_challenge</span><br><span class="line">  - utter_iamabot</span><br></pre></td></tr></table></figure>
+<p>以<code>##</code>开头的行表示对每个story的注释，以<code>*</code>开头的行表示用户输入的结构化信息，以<code>-</code>开头的行表示机器人的action。</p>
+<h2 id="查看domain-yml"><a href="#查看domain-yml" class="headerlink" title="查看domain.yml"></a>查看domain.yml</h2><p>domain.yml定义了机器人所处的”宇宙”，包括机器人能够接受什么样的输入、能够预测什么样的action、如何回复、需要保存哪些信息等等。domain.yml里主要存了以下几个信息：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>intents</code></td>
+<td>things you expect users to say (机器人所支持的用户意图)</td>
+</tr>
+<tr>
+<td><code>actions</code></td>
+<td>things your assistant can do and say (机器人可以做和说的action)</td>
+</tr>
+<tr>
+<td><code>templates</code></td>
+<td>template strings for the things your assistant can say (每个action对应的回复模板)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><p>准备好训练数据文件和配置文件之后，就可以训练模型了，在命令行输入<code>rasa train</code>，就可以开始训练了。</p>
+<h2 id="使用训练好的模型进行交互对话"><a href="#使用训练好的模型进行交互对话" class="headerlink" title="使用训练好的模型进行交互对话"></a>使用训练好的模型进行交互对话</h2><p>在训练好模型之后，就可以使用训练好的模型进行交互对话了，在命令行输入<code>rasa shell</code>，就可以进入交互对话模式了。</p>
 
       
     </div>
@@ -444,7 +494,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/XLNet/" rel="tag"># XLNet</a>
+            <a href="/tags/Rasa/" rel="tag"># Rasa</a>
           
         </div>
       
@@ -457,8 +507,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/28/Transformer笔记/" rel="next" title="Transformer笔记">
-                <i class="fa fa-chevron-left"></i> Transformer笔记
+              <a href="/2020/05/04/FM笔记/" rel="next" title="FM笔记">
+                <i class="fa fa-chevron-left"></i> FM笔记
               </a>
             
           </div>
@@ -466,10 +516,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/04/BERT笔记/" rel="prev" title="BERT笔记">
-                BERT笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,8 +574,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -606,6 +661,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个新项目"><span class="nav-number">1.</span> <span class="nav-text">创建一个新项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看nlu-md"><span class="nav-number">2.</span> <span class="nav-text">查看nlu.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看config-yml"><span class="nav-number">3.</span> <span class="nav-text">查看config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看stories-md"><span class="nav-number">4.</span> <span class="nav-text">查看stories.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看domain-yml"><span class="nav-number">5.</span> <span class="nav-text">查看domain.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练模型"><span class="nav-number">6.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用训练好的模型进行交互对话"><span class="nav-number">7.</span> <span class="nav-text">使用训练好的模型进行交互对话</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
