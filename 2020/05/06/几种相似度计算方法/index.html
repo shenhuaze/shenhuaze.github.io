@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Coding,Dynamic Programming,坐标型动态规划," />
+  <meta name="keywords" content="协同过滤，相似度计算," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="题目位置http://www.lintcode.com/en/problem/edit-distance/">
-<meta name="keywords" content="Coding,Dynamic Programming,坐标型动态规划">
+<meta name="description" content="在协同过滤中，需要计算用户之间或者物品之间的相似度。">
+<meta name="keywords" content="协同过滤，相似度计算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Edit Distance">
-<meta property="og:url" content="http://shenhuaze.gitee.io/2018/05/06/Edit-Distance/index.html">
+<meta property="og:title" content="几种相似度计算方法">
+<meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/06/几种相似度计算方法/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="题目位置http://www.lintcode.com/en/problem/edit-distance/">
+<meta property="og:description" content="在协同过滤中，需要计算用户之间或者物品之间的相似度。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-27T10:06:36.876Z">
+<meta property="og:updated_time" content="2020-05-06T14:36:28.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edit Distance">
-<meta name="twitter:description" content="题目位置http://www.lintcode.com/en/problem/edit-distance/">
+<meta name="twitter:title" content="几种相似度计算方法">
+<meta name="twitter:description" content="在协同过滤中，需要计算用户之间或者物品之间的相似度。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.gitee.io/2018/05/06/Edit-Distance/"/>
+  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/05/06/几种相似度计算方法/"/>
 
 
 
 
 
-  <title>Edit Distance | 申化泽的个人网站</title>
+  <title>几种相似度计算方法 | 申化泽的个人网站</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2018/05/06/Edit-Distance/">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/05/06/几种相似度计算方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Edit Distance</h1>
+          <h1 class="post-title" itemprop="name headline">几种相似度计算方法</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-06T10:34:46+08:00">
-                2018-05-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T20:42:03+08:00">
+                2020-05-06
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/" itemprop="url" rel="index">
-                    <span itemprop="name">Coding</span>
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
                   </a>
                 </span>
 
@@ -328,8 +328,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/Dynamic-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Dynamic Programming</span>
+                  <a href="/categories/推荐系统/相似度计算/" itemprop="url" rel="index">
+                    <span itemprop="name">相似度计算</span>
                   </a>
                 </span>
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/06/Edit-Distance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/06/Edit-Distance/" itemprop="commentsCount"></span>
+                <a href="/2020/05/06/几种相似度计算方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/06/几种相似度计算方法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,7 +355,7 @@
 
           
           
-             <span id="/2018/05/06/Edit-Distance/" class="leancloud_visitors" data-flag-title="Edit Distance">
+             <span id="/2020/05/06/几种相似度计算方法/" class="leancloud_visitors" data-flag-title="几种相似度计算方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,25 +386,63 @@
       
 
       
-        <h3 id="题目位置"><a href="#题目位置" class="headerlink" title="题目位置"></a>题目位置</h3><p><a href="http://www.lintcode.com/en/problem/edit-distance/" target="_blank" rel="noopener">http://www.lintcode.com/en/problem/edit-distance/</a></p>
+        <p>在协同过滤中，需要计算用户之间或者物品之间的相似度。</p>
 <a id="more"></a>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Given two words <em>word1</em> and <em>word2</em>, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)</p>
-<p>You have the following 3 operations permitted on a word:</p>
-<ul>
-<li>Insert a character</li>
-<li>Delete a character</li>
-<li>Replace a character</li>
-</ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Given word1 = <code>&quot;mart&quot;</code> and word2 = <code>&quot;karma&quot;</code>, return <code>3</code>.</p>
-<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><ul>
-<li>这道题求的是<strong>最少的步骤数，相当于求最小值。</strong></li>
-<li>状态：<code>dp[i][j]</code>表示从<code>word1</code>的第<code>i</code>个字符转换到<code>word2</code>的第<code>j</code>个字符所需要的步骤数。</li>
-<li>方程：两种情况，一是当<code>word1[i] == word2[j]</code>时，<code>dp[i][j] = dp[i-1][j-1]</code>；二是当<code>word1[i] != word2[j]</code>时，<code>dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])</code>。</li>
-<li>初始化：<code>dp</code>数组的维度为<code>(word1.length+1, word2.length+1)</code>，因为还要考虑空字符串的情况，初始化的时候就初始化第一行和第一列，<code>dp[i][0] = i</code>, <code>dp[0][i] = j</code>，为啥，因为空字符串转换到任意一个字符串的第<code>i</code>个位置时，肯定需要<code>i</code>步。</li>
-<li>答案：就是<code>dp[word1.length][word2.length]</code>。</li>
-</ul>
-<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><h4 id="解法一：动态规划"><a href="#解法一：动态规划" class="headerlink" title="解法一：动态规划"></a>解法一：动态规划</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动态规划解法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word1: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word2: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: The minimum number of steps.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">int</span> m = word1.length();</span><br><span class="line">        <span class="keyword">int</span> n = word2.length();</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            dp[<span class="number">0</span>][i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n + <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="comment">// 这里应该是charAt(i-1)而不是charAt(i)，因为字符串的字符index是从0开始</span></span><br><span class="line">                <span class="comment">// 到s.lenght() - 1结束的，而且按照dp数组的元素含义也应该是这样做</span></span><br><span class="line">                <span class="keyword">if</span> (word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>)) &#123;</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j] = Math.min(dp[i - <span class="number">1</span>][j - <span class="number">1</span>], Math.min(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>])) + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="解法二：递归"><a href="#解法二：递归" class="headerlink" title="解法二：递归"></a>解法二：递归</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归解法，超时了，只通过了63%的test case</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word1: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> word2: A string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: The minimum number of steps.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">if</span> (word1.equals(word2)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> m = word1.length();</span><br><span class="line">        <span class="keyword">int</span> n = word2.length();</span><br><span class="line">        <span class="keyword">if</span> (m == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> m;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (word1.charAt(<span class="number">0</span>) == word2.charAt(<span class="number">0</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> minDistance(word1.substring(<span class="number">1</span>), word2.substring(<span class="number">1</span>));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(<span class="number">1</span> + minDistance(word1.substring(<span class="number">1</span>), word2.substring(<span class="number">1</span>)),</span><br><span class="line">                            Math.min(<span class="number">1</span> + minDistance(word1, word2.substring(<span class="number">1</span>)),</span><br><span class="line">                                     <span class="number">1</span> + minDistance(word1.substring(<span class="number">1</span>), word2)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基于物品的协同过滤，需要计算物品之间的相似度。基于用户的协同过滤，需要计算用户之间的相似度。</p>
+<p>假设电影评分矩阵如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>movie1</th>
+<th>movie2</th>
+<th>movie3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>user1</strong></td>
+<td>3.7</td>
+<td>3.1</td>
+<td>空</td>
+</tr>
+<tr>
+<td><strong>user2</strong></td>
+<td>空</td>
+<td>2.8</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td><strong>user3</strong></td>
+<td>3.6</td>
+<td>1.9</td>
+<td>5.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这里以物品之间的相似度为例（计算movie1和movie2的相似度），介绍几种相似度的计算方法。</p>
+<h2 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h2><p>计算余弦相似度时，将为评分的元素设为0。</p>
+<p>movie1向量(3.7, 0, 3.6)与movie2向量(3.1, 2.8, 1.9)之间做内积，再除以两者的模。</p>
+<p>similarity = (3.7 <em> 3.1 + 0 </em> 2.8 + 3.6 <em> 1.9) / (sqrt(3.7^2 + 0^2 + 3.6^2) </em> sqrt(3.1^2 + 2.8^2 + 1.9^2))</p>
+<h2 id="修正的余弦相似度"><a href="#修正的余弦相似度" class="headerlink" title="修正的余弦相似度"></a>修正的余弦相似度</h2><p>计算修正的余弦相似度时，先找到同时给movie1和movie2评过分的用户，组成一个集合U。比如上面的例子，user1和user3都分别给movie1和movie2评过分，而user2给movie2评过分，但是没有给movie1评过分，因此集合U里面只包含user1和user3。在计算movie1和movie2的修正的余弦相似度时，movie1和movie2的向量，就去掉user2的评分这一维。即movie1 = (3.7, 3.6), movie2 = (3.1, 1.9)。</p>
+<p>此外，计算修正的余弦相似度，还需要先计算好集合U里面每个user各自的评分平均值，user1_average = (3.7 + 3.1) / 2 = 3.4, user3_average = (3.6 + 1.9 + 5.0) / 3 = 2.75。注意这里user3因为对三部电影评过分，因此在计算user3的平均值时，需要把他评过分的所有电影都考虑上。</p>
+<p>similarity = ((3.7 - 3.4) <em> (3.1 - 3.4) + (3.6 - 2.75) </em> (1.9 - 2.75)) / (sqrt((3.7 - 3.4)^2 + (3.6 - 2.75)^2) * sqrt((3.1 - 3.4)^2 + (1.9 - 2.75)^2))</p>
+<h2 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h2><p>计算皮尔逊相关系数时，也是先找到同时给movie1和movie2评过分的用户，组成一个集合U，集合U里也是只包含user1和user3。</p>
+<p>与修正的余弦相似度不同，这里需要下计算好集合U里面所有用户给movie1评分的平均值，以及给movie2评分的平均值。movie1_average = (3.7 + 3.6) / 2 = 3.65, movie2_average = (3.1 + 1.9) / 2 = 2.5。注意这里在计算movie2的平均值的时候，虽然movie2也被user2评过分，但是由于user2不在集合U里面，因此不考虑user2对movie2的评分。<strong>（我其实暂时也不确定，在计算movie2的平均值时，是否需要考虑user2对movie2的评分，之后再多参考一些权威点的资料，确认一下）</strong></p>
+<p>similarity = ((3.7 - 3.65) <em> (3.1 - 2.5) + (3.6 - 3.65) </em> (1.9 - 2.5)) / (sqrt((3.7 - 3.65)^2 + (3.6 - 3.65)^2) * sqrt((3.1 - 2.5)^2 + (1.9 - 2.5)^2))</p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>我在网上查资料的时候，发现了两篇博客，分别是：</p>
+<ol>
+<li><p><a href="https://blog.csdn.net/qq_23942803/article/details/50597907" target="_blank" rel="noopener">基于物品的协同过滤中，余弦相似度、皮尔森系数、修正余弦相似度三者的区别</a></p>
+</li>
+<li><p><a href="http://wulc.me/2016/02/22/%E3%80%8AProgramming%20Collective%20Intelligence%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2" target="_blank" rel="noopener">《Programming Collective Intelligence》读书笔记(2)—协同过滤</a>—%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/)</p>
+</li>
+</ol>
+<p>这两篇博客关于修正的余弦相似度和皮尔逊相关系数的区别的描述，有所不同。</p>
+<p>第1篇博客讲的两种相似度的区别，主要在于计算公式中的平均值时的区别，修正的余弦相似度是计算集合U（即对movie1和movie2有共同评分的用户组成的集合）里面每个用户对他看过的所有电影的评分的平均值，而皮尔逊相关系数是计算集合U里面所有用户对movie1评分的平均值和对movie2评分的平均值。</p>
+<p>第2篇博客讲的两种相似度的区别，”主要在于公式的分母上，皮尔逊系数的分母采用的评分集是两个用户的共同评分集（就是两个用户都对这个物品有评价），而修正的余弦系数则采用两个用户各自的评分集”。其中”主要在于公式的分母上”，说得有点不严谨，因为分子其实也有区别，区别就在于平均值的计算上。注意，第2篇博客计算的是用户之间的相似度，不过”主要在于公司的分母上”的说法，应该也是不严谨的。</p>
+<p>因此我这篇笔记里，暂时采用的是第1篇博客的做法。</p>
 
       
     </div>
@@ -422,11 +460,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Coding/" rel="tag"># Coding</a>
-          
-            <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
-          
-            <a href="/tags/坐标型动态规划/" rel="tag"># 坐标型动态规划</a>
+            <a href="/tags/协同过滤，相似度计算/" rel="tag"># 协同过滤，相似度计算</a>
           
         </div>
       
@@ -439,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/05/Two-Sum/" rel="next" title="Two Sum">
-                <i class="fa fa-chevron-left"></i> Two Sum
+              <a href="/2020/05/05/DeepFM笔记/" rel="next" title="DeepFM笔记">
+                <i class="fa fa-chevron-left"></i> DeepFM笔记
               </a>
             
           </div>
@@ -448,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/10/ubuntu16.04安装jdk/" rel="prev" title="ubuntu16.04安装jdk">
-                ubuntu16.04安装jdk <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目位置"><span class="nav-number">1.</span> <span class="nav-text">题目位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">3.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析"><span class="nav-number">4.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考代码"><span class="nav-number">5.</span> <span class="nav-text">参考代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法一：动态规划"><span class="nav-number">5.1.</span> <span class="nav-text">解法一：动态规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法二：递归"><span class="nav-number">5.2.</span> <span class="nav-text">解法二：递归</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#余弦相似度"><span class="nav-number">1.</span> <span class="nav-text">余弦相似度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正的余弦相似度"><span class="nav-number">2.</span> <span class="nav-text">修正的余弦相似度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#皮尔逊相关系数"><span class="nav-number">3.</span> <span class="nav-text">皮尔逊相关系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论"><span class="nav-number">4.</span> <span class="nav-text">讨论</span></a></li></ol></div>
             
 
           </div>
