@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="申化泽的个人网站">
 <meta property="og:description" content="在协同过滤中，需要计算用户之间或者物品之间的相似度。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-06T14:36:28.834Z">
+<meta property="og:updated_time" content="2020-05-06T14:57:10.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="几种相似度计算方法">
 <meta name="twitter:description" content="在协同过滤中，需要计算用户之间或者物品之间的相似度。">
@@ -424,21 +424,21 @@
 </div>
 <p>这里以物品之间的相似度为例（计算movie1和movie2的相似度），介绍几种相似度的计算方法。</p>
 <h2 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h2><p>计算余弦相似度时，将为评分的元素设为0。</p>
-<p>movie1向量(3.7, 0, 3.6)与movie2向量(3.1, 2.8, 1.9)之间做内积，再除以两者的模。</p>
-<p>similarity = (3.7 <em> 3.1 + 0 </em> 2.8 + 3.6 <em> 1.9) / (sqrt(3.7^2 + 0^2 + 3.6^2) </em> sqrt(3.1^2 + 2.8^2 + 1.9^2))</p>
+<p>movie1向量(3.7, 0.0, 3.6)与movie2向量(3.1, 2.8, 1.9)之间做内积，再除以两者的模。</p>
+<p>similarity = (3.7 * 3.1 + 0.0 * 2.8 + 3.6 * 1.9) / (sqrt(3.7^2 + 0.0^2 + 3.6^2) * sqrt(3.1^2 + 2.8^2 + 1.9^2))</p>
 <h2 id="修正的余弦相似度"><a href="#修正的余弦相似度" class="headerlink" title="修正的余弦相似度"></a>修正的余弦相似度</h2><p>计算修正的余弦相似度时，先找到同时给movie1和movie2评过分的用户，组成一个集合U。比如上面的例子，user1和user3都分别给movie1和movie2评过分，而user2给movie2评过分，但是没有给movie1评过分，因此集合U里面只包含user1和user3。在计算movie1和movie2的修正的余弦相似度时，movie1和movie2的向量，就去掉user2的评分这一维。即movie1 = (3.7, 3.6), movie2 = (3.1, 1.9)。</p>
 <p>此外，计算修正的余弦相似度，还需要先计算好集合U里面每个user各自的评分平均值，user1_average = (3.7 + 3.1) / 2 = 3.4, user3_average = (3.6 + 1.9 + 5.0) / 3 = 2.75。注意这里user3因为对三部电影评过分，因此在计算user3的平均值时，需要把他评过分的所有电影都考虑上。</p>
-<p>similarity = ((3.7 - 3.4) <em> (3.1 - 3.4) + (3.6 - 2.75) </em> (1.9 - 2.75)) / (sqrt((3.7 - 3.4)^2 + (3.6 - 2.75)^2) * sqrt((3.1 - 3.4)^2 + (1.9 - 2.75)^2))</p>
+<p>similarity = ((3.7 - 3.4) * (3.1 - 3.4) + (3.6 - 2.75) * (1.9 - 2.75)) / (sqrt((3.7 - 3.4)^2 + (3.6 - 2.75)^2) * sqrt((3.1 - 3.4)^2 + (1.9 - 2.75)^2))</p>
 <h2 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h2><p>计算皮尔逊相关系数时，也是先找到同时给movie1和movie2评过分的用户，组成一个集合U，集合U里也是只包含user1和user3。</p>
 <p>与修正的余弦相似度不同，这里需要下计算好集合U里面所有用户给movie1评分的平均值，以及给movie2评分的平均值。movie1_average = (3.7 + 3.6) / 2 = 3.65, movie2_average = (3.1 + 1.9) / 2 = 2.5。注意这里在计算movie2的平均值的时候，虽然movie2也被user2评过分，但是由于user2不在集合U里面，因此不考虑user2对movie2的评分。<strong>（我其实暂时也不确定，在计算movie2的平均值时，是否需要考虑user2对movie2的评分，之后再多参考一些权威点的资料，确认一下）</strong></p>
-<p>similarity = ((3.7 - 3.65) <em> (3.1 - 2.5) + (3.6 - 3.65) </em> (1.9 - 2.5)) / (sqrt((3.7 - 3.65)^2 + (3.6 - 3.65)^2) * sqrt((3.1 - 2.5)^2 + (1.9 - 2.5)^2))</p>
+<p>similarity = ((3.7 - 3.65) * (3.1 - 2.5) + (3.6 - 3.65) * (1.9 - 2.5)) / (sqrt((3.7 - 3.65)^2 + (3.6 - 3.65)^2) * sqrt((3.1 - 2.5)^2 + (1.9 - 2.5)^2))</p>
 <h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>我在网上查资料的时候，发现了两篇博客，分别是：</p>
-<ol>
+<ul>
 <li><p><a href="https://blog.csdn.net/qq_23942803/article/details/50597907" target="_blank" rel="noopener">基于物品的协同过滤中，余弦相似度、皮尔森系数、修正余弦相似度三者的区别</a></p>
 </li>
-<li><p><a href="http://wulc.me/2016/02/22/%E3%80%8AProgramming%20Collective%20Intelligence%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2" target="_blank" rel="noopener">《Programming Collective Intelligence》读书笔记(2)—协同过滤</a>—%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/)</p>
+<li><p><a href="http://wulc.me/2016/02/22/%E3%80%8AProgramming%20Collective%20Intelligence%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)--%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/" target="_blank" rel="noopener">《Programming Collective Intelligence》读书笔记(2)—协同过滤</a></p>
 </li>
-</ol>
+</ul>
 <p>这两篇博客关于修正的余弦相似度和皮尔逊相关系数的区别的描述，有所不同。</p>
 <p>第1篇博客讲的两种相似度的区别，主要在于计算公式中的平均值时的区别，修正的余弦相似度是计算集合U（即对movie1和movie2有共同评分的用户组成的集合）里面每个用户对他看过的所有电影的评分的平均值，而皮尔逊相关系数是计算集合U里面所有用户对movie1评分的平均值和对movie2评分的平均值。</p>
 <p>第2篇博客讲的两种相似度的区别，”主要在于公式的分母上，皮尔逊系数的分母采用的评分集是两个用户的共同评分集（就是两个用户都对这个物品有评价），而修正的余弦系数则采用两个用户各自的评分集”。其中”主要在于公式的分母上”，说得有点不严谨，因为分子其实也有区别，区别就在于平均值的计算上。注意，第2篇博客计算的是用户之间的相似度，不过”主要在于公司的分母上”的说法，应该也是不严谨的。</p>
