@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。">
+<meta name="description" content="今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。比赛的代码我也上传到github上了，比赛的过程中会不断更新。">
 <meta name="keywords" content="腾讯广告算法大赛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020腾讯广告算法大赛笔记-1">
 <meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/10/2020腾讯广告算法大赛笔记-1/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。">
+<meta property="og:description" content="今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。比赛的代码我也上传到github上了，比赛的过程中会不断更新。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-10T00:46:30.110Z">
+<meta property="og:updated_time" content="2020-05-10T00:57:50.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2020腾讯广告算法大赛笔记-1">
-<meta name="twitter:description" content="今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。">
+<meta name="twitter:description" content="今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。比赛的代码我也上传到github上了，比赛的过程中会不断更新。">
 
 
 
@@ -386,7 +386,7 @@
       
 
       
-        <p>今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。</p>
+        <p>今年参加了腾讯广告算法大赛，打算记录一下参赛过程中的点点滴滴，希望能通过比赛提升自己，也希望能获得好成绩。比赛的代码我也上传到<a href="https://github.com/shenhuaze/TencentCompetitionPreliminary2020" target="_blank" rel="noopener">github</a>上了，比赛的过程中会不断更新。</p>
 <a id="more"></a>
 <h2 id="第一次成功提交"><a href="#第一次成功提交" class="headerlink" title="第一次成功提交"></a>第一次成功提交</h2><p>比赛的第一步是保证提交文件的格式正确，能够成功提交答案，有效获得分数。我就将测试集里的user_id全部取出来去重，然后给每个user_id随机给了一个age（1到10之间）和gender（1到2之间），总共有1000000个不同的user_id，生成三列的文件submission.csv，表头是[user_id, predicted_age, predicted_gender]。然后将submission.csv上传到腾讯云自己创建的<a href="https://console.cloud.tencent.com/cos5" target="_blank" rel="noopener">COS存储桶</a>中。然后在<a href="https://algo.qq.com/" target="_blank" rel="noopener">大赛官网</a>的个人信息页面，点击<code>提交结果</code>，将submission.csv在COS存储桶的地址粘贴到输入框中，就可以了。提交之后，大概五到七分钟就会有分数，我随机生成的答案的分数是0.600986。</p>
 
