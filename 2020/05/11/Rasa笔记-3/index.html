@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="构建一个简单的FAQ机器人。">
+<meta name="description" content="使用ResponseSelector组件来构建FAQ机器人。">
 <meta name="keywords" content="Rasa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rasa笔记-2">
-<meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-2/index.html">
+<meta property="og:title" content="Rasa笔记-3">
+<meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-3/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="构建一个简单的FAQ机器人。">
+<meta property="og:description" content="使用ResponseSelector组件来构建FAQ机器人。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-11T10:36:35.625Z">
+<meta property="og:updated_time" content="2020-05-11T11:41:02.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rasa笔记-2">
-<meta name="twitter:description" content="构建一个简单的FAQ机器人。">
+<meta name="twitter:title" content="Rasa笔记-3">
+<meta name="twitter:description" content="使用ResponseSelector组件来构建FAQ机器人。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-2/"/>
+  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-3/"/>
 
 
 
 
 
-  <title>Rasa笔记-2 | 申化泽的个人网站</title>
+  <title>Rasa笔记-3 | 申化泽的个人网站</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-2/">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Rasa笔记-2</h1>
+          <h1 class="post-title" itemprop="name headline">Rasa笔记-3</h1>
         
 
         <div class="post-meta">
@@ -294,7 +294,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-11T16:41:33+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-11T18:38:13+08:00">
                 2020-05-11
               </time>
             
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/05/11/Rasa笔记-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/11/Rasa笔记-2/" itemprop="commentsCount"></span>
+                <a href="/2020/05/11/Rasa笔记-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/11/Rasa笔记-3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,7 +355,7 @@
 
           
           
-             <span id="/2020/05/11/Rasa笔记-2/" class="leancloud_visitors" data-flag-title="Rasa笔记-2">
+             <span id="/2020/05/11/Rasa笔记-3/" class="leancloud_visitors" data-flag-title="Rasa笔记-3">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,31 +386,27 @@
       
 
       
-        <p>构建一个简单的FAQ机器人。</p>
+        <p>使用ResponseSelector组件来构建FAQ机器人。</p>
 <a id="more"></a>
-<p>这是Rasa官方给的一个FAQ机器人例子，构建一个叫Sara的机器人，可以用来回答用户关于Rasa的问题。</p>
-<h2 id="初始化一个机器人"><a href="#初始化一个机器人" class="headerlink" title="初始化一个机器人"></a>初始化一个机器人</h2><p>首先创建一个目录，然后进行初始化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir rasa-assistant</span><br><span class="line">cd rasa-assistant</span><br><span class="line">rasa init</span><br></pre></td></tr></table></figure>
-<p>输入<code>rasa init</code>之后，会依次提示：构建机器人的目录（默认是当前目录）、是否训练模型（默认是yes）、是否跟训练好的机器人进行对话（默认是yes）。这里目录就选默认的当前目录，是否训练模型和是否进行对话，选yes和no都行，因为接下来要对一些文件进行修改，然后重新训练模型。</p>
-<h2 id="修改config-yml"><a href="#修改config-yml" class="headerlink" title="修改config.yml"></a>修改config.yml</h2><p>这里我们会用到MemoizationPolicy，对应的参数<code>max_history</code>表示机器人最多记住<code>max_history</code>轮历史信息。对于FAQ机器人来说，它只关心用户当前的输入，因此<code>max_history</code>设为1。</p>
-<p>config.yml的内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Configuration for Rasa NLU.</span><br><span class="line"># https://rasa.com/docs/rasa/nlu/components/</span><br><span class="line">language: en</span><br><span class="line">pipeline: supervised_embeddings</span><br><span class="line"></span><br><span class="line"># Configuration for Rasa Core.</span><br><span class="line"># https://rasa.com/docs/rasa/core/policies/</span><br><span class="line">policies:</span><br><span class="line">  - name: MemoizationPolicy</span><br><span class="line">    max_history: 1</span><br><span class="line">  - name: MappingPolicy</span><br></pre></td></tr></table></figure>
-<p>其中MappingPolicy是用来处理<code>/restart</code>意图的，<code>/restart</code>意图是用来清空对话历史，开启新的一轮对话用的。</p>
-<h2 id="修改stories-md"><a href="#修改stories-md" class="headerlink" title="修改stories.md"></a>修改stories.md</h2><p>修改stories.md，修改后的内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## greet</span><br><span class="line">* greet</span><br><span class="line">  - utter_greet</span><br><span class="line"></span><br><span class="line">## thank</span><br><span class="line">* thank</span><br><span class="line">  - utter_noworries</span><br><span class="line"></span><br><span class="line">## goodbye</span><br><span class="line">* bye</span><br><span class="line">  - utter_bye</span><br></pre></td></tr></table></figure>
-<p>stories.md中包含三个单轮对话，每个意图对应一个回复action。</p>
-<h2 id="修改domain-yml"><a href="#修改domain-yml" class="headerlink" title="修改domain.yml"></a>修改domain.yml</h2><p>修改domain.yml，修改后的内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">intents:</span><br><span class="line">  - greet</span><br><span class="line">  - bye</span><br><span class="line">  - thank</span><br><span class="line"></span><br><span class="line">actions:</span><br><span class="line">  - utter_greet</span><br><span class="line">  - utter_noworries</span><br><span class="line">  - utter_bye</span><br><span class="line"></span><br><span class="line">templates:</span><br><span class="line">  utter_noworries:</span><br><span class="line">    - text: No worries!</span><br><span class="line">  utter_greet:</span><br><span class="line">    - text: Hi</span><br><span class="line">  utter_bye:</span><br><span class="line">    - text: Bye!</span><br></pre></td></tr></table></figure>
-<p>机器人总共支持三个意图：<code>greet</code>、<code>bye</code>和<code>thank</code>。总共支持三个action：<code>utter_noworries</code>、<code>utter_greet</code>和<code>utter_bye</code>。每个action对应的回复模板也都设定好了。</p>
-<h2 id="修改nlu-md"><a href="#修改nlu-md" class="headerlink" title="修改nlu.md"></a>修改nlu.md</h2><p>修改nlu.md，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">## intent:greet</span><br><span class="line">- Hi</span><br><span class="line">- Hey</span><br><span class="line">- Hi bot</span><br><span class="line">- Hey bot</span><br><span class="line">- Hello</span><br><span class="line">- Good morning</span><br><span class="line">- hi again</span><br><span class="line">- hi folks</span><br><span class="line"></span><br><span class="line">## intent:bye</span><br><span class="line">- goodbye</span><br><span class="line">- goodnight</span><br><span class="line">- good bye</span><br><span class="line">- good night</span><br><span class="line">- see ya</span><br><span class="line">- toodle-oo</span><br><span class="line">- bye bye</span><br><span class="line">- gotta go</span><br><span class="line">- farewell</span><br><span class="line"></span><br><span class="line">## intent:thank</span><br><span class="line">- Thanks</span><br><span class="line">- Thank you</span><br><span class="line">- Thank you so much</span><br><span class="line">- Thanks bot</span><br><span class="line">- Thanks for that</span><br><span class="line">- cheers</span><br></pre></td></tr></table></figure>
-<p>每个意图下都有多条属于该意图的句子。</p>
+<p>使用ResponseSelector可以比较方便的处理单轮对话或者FAQ问答，只用一个story来处理所有FAQ问答。这里以Sara机器人的三个意图（<code>ask_channels</code>、<code>ask_languages</code>和<code>ask_rasax</code>）为例，介绍ResponseSelector的使用。</p>
+<h2 id="修改nlu-md"><a href="#修改nlu-md" class="headerlink" title="修改nlu.md"></a>修改nlu.md</h2><p>每个faq意图都有一个<code>faq/</code>前缀，使得ResponseSelector能够将它们识别为faq意图。修改后的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">## intent:greet</span><br><span class="line">- Hi</span><br><span class="line">- Hey</span><br><span class="line">- Hi bot</span><br><span class="line">- Hey bot</span><br><span class="line">- Hello</span><br><span class="line">- Good morning</span><br><span class="line">- hi again</span><br><span class="line">- hi folks</span><br><span class="line"></span><br><span class="line">## intent:bye</span><br><span class="line">- goodbye</span><br><span class="line">- goodnight</span><br><span class="line">- good bye</span><br><span class="line">- good night</span><br><span class="line">- see ya</span><br><span class="line">- toodle-oo</span><br><span class="line">- bye bye</span><br><span class="line">- gotta go</span><br><span class="line">- farewell</span><br><span class="line"></span><br><span class="line">## intent:thank</span><br><span class="line">- Thanks</span><br><span class="line">- Thank you</span><br><span class="line">- Thank you so much</span><br><span class="line">- Thanks bot</span><br><span class="line">- Thanks for that</span><br><span class="line">- cheers</span><br><span class="line"></span><br><span class="line">## intent: faq/ask_channels</span><br><span class="line">- What channels of communication does rasa support?</span><br><span class="line">- what channels do you support?</span><br><span class="line">- what chat channels does rasa uses</span><br><span class="line">- channels supported by Rasa</span><br><span class="line">- which messaging channels does rasa support?</span><br><span class="line"></span><br><span class="line">## intent: faq/ask_languages</span><br><span class="line">- what language does rasa support?</span><br><span class="line">- which language do you support?</span><br><span class="line">- which languages supports rasa</span><br><span class="line">- can I use rasa also for another laguage?</span><br><span class="line">- languages supported</span><br><span class="line"></span><br><span class="line">## intent: faq/ask_rasax</span><br><span class="line">- I want information about rasa x</span><br><span class="line">- i want to learn more about Rasa X</span><br><span class="line">- what is rasa x?</span><br><span class="line">- Can you tell me about rasa x?</span><br><span class="line">- Tell me about rasa x</span><br><span class="line">- tell me what is rasa x</span><br></pre></td></tr></table></figure>
+<h2 id="新增responses-md"><a href="#新增responses-md" class="headerlink" title="新增responses.md"></a>新增responses.md</h2><p>在<code>data/</code>目录下新增<code>responses.md</code>文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## ask channels</span><br><span class="line">* faq/ask_channels</span><br><span class="line">  - We have a comprehensive list of [supported connectors](https://rasa.com/docs/core/connectors/), but if you don&apos;t see the one you&apos;re looking for, you can always create a custom connector by following [this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/).</span><br><span class="line"></span><br><span class="line">## ask languages</span><br><span class="line">* faq/ask_languages</span><br><span class="line">  - You can use Rasa to build assistants in any language you want!</span><br><span class="line"></span><br><span class="line">## ask rasa x</span><br><span class="line">* faq/ask_rasax</span><br><span class="line"> - Rasa X is a tool to learn from real conversations and improve your assistant. Read more [here](https://rasa.com/docs/rasa-x/)</span><br></pre></td></tr></table></figure>
+<p><code>responses.md</code>文件里存的是每个faq意图对应的回复。</p>
+<h2 id="修改config-yml"><a href="#修改config-yml" class="headerlink" title="修改config.yml"></a>修改config.yml</h2><p>为了使用ResponseSelector，需要修改config.yml，修改之后的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Configuration for Rasa NLU.</span><br><span class="line"># https://rasa.com/docs/rasa/nlu/components/</span><br><span class="line">language: en</span><br><span class="line">pipeline:</span><br><span class="line">  - name: &quot;WhitespaceTokenizer&quot;</span><br><span class="line">  - name: &quot;RegexFeaturizer&quot;</span><br><span class="line">  - name: &quot;CRFEntityExtractor&quot;</span><br><span class="line">  - name: &quot;EntitySynonymMapper&quot;</span><br><span class="line">  - name: &quot;CountVectorsFeaturizer&quot;</span><br><span class="line">  - name: &quot;CountVectorsFeaturizer&quot;</span><br><span class="line">    analyzer: &quot;char_wb&quot;</span><br><span class="line">    min_ngram: 1</span><br><span class="line">    max_ngram: 4</span><br><span class="line">  - name: &quot;EmbeddingIntentClassifier&quot;</span><br><span class="line">  - name: &quot;ResponseSelector&quot;</span><br><span class="line"></span><br><span class="line"># Configuration for Rasa Core.</span><br><span class="line"># https://rasa.com/docs/rasa/core/policies/</span><br><span class="line">policies:</span><br><span class="line">  - name: MemoizationPolicy</span><br><span class="line">    max_history: 1</span><br><span class="line">  - name: MappingPolicy</span><br></pre></td></tr></table></figure>
+<p>其实就是将<code>supervised_embeddings</code>这个pipeline展开之后，再结尾加上<code>ResponseSelector</code>组件。</p>
+<h2 id="修改domain-yml"><a href="#修改domain-yml" class="headerlink" title="修改domain.yml"></a>修改domain.yml</h2><p>在domain.yml中添加一个intent：<code>faq</code>，以及一个action：<code>respond_faq</code>，修改后的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">intents:</span><br><span class="line">  - greet</span><br><span class="line">  - bye</span><br><span class="line">  - thank</span><br><span class="line">  - faq</span><br><span class="line"></span><br><span class="line">actions:</span><br><span class="line">  - utter_greet</span><br><span class="line">  - utter_noworries</span><br><span class="line">  - utter_bye</span><br><span class="line">  - respond_faq</span><br><span class="line"></span><br><span class="line">templates:</span><br><span class="line">  utter_noworries:</span><br><span class="line">    - text: No worries!</span><br><span class="line">  utter_greet:</span><br><span class="line">    - text: Hi</span><br><span class="line">  utter_bye:</span><br><span class="line">    - text: Bye!</span><br></pre></td></tr></table></figure>
+<h2 id="修改stories-md"><a href="#修改stories-md" class="headerlink" title="修改stories.md"></a>修改stories.md</h2><p>新增一个faq的story，修改后的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">## greet</span><br><span class="line">* greet</span><br><span class="line">  - utter_greet</span><br><span class="line"></span><br><span class="line">## thank</span><br><span class="line">* thank</span><br><span class="line">  - utter_noworries</span><br><span class="line"></span><br><span class="line">## goodbye</span><br><span class="line">* bye</span><br><span class="line">  - utter_bye</span><br><span class="line"></span><br><span class="line">## Some question from FAQ</span><br><span class="line">* faq</span><br><span class="line">  - respond_faq</span><br></pre></td></tr></table></figure>
 <h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><p>训练模型：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rasa train</span><br></pre></td></tr></table></figure>
 <h2 id="使用训练好的模型进行对话"><a href="#使用训练好的模型进行对话" class="headerlink" title="使用训练好的模型进行对话"></a>使用训练好的模型进行对话</h2><p>在训练好模型之后，就可以在命令行输入以下命令，进入对话交互模式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rasa shell</span><br></pre></td></tr></table></figure>
 <p>下面是一些对话的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Your input -&gt;  Hello</span><br><span class="line">Hi</span><br><span class="line">Your input -&gt;  bye</span><br><span class="line">Bye!</span><br><span class="line">Your input -&gt;  thanks</span><br><span class="line">No worries!</span><br><span class="line">Your input -&gt;  hello</span><br><span class="line">Hi</span><br><span class="line">Your input -&gt;  byebye</span><br><span class="line">Bye!</span><br><span class="line">Your input -&gt;  Thank you!</span><br><span class="line">No worries!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Your input -&gt;  Hello</span><br><span class="line">Hi</span><br><span class="line">Your input -&gt;  Bye</span><br><span class="line">Bye!</span><br><span class="line">Your input -&gt;  What channels of communication does rasa support? We have a comprehensive list of [supported connectors](https://rasa.com/docs/core/connectors/), but if you don&apos;t see the one you&apos;re looking for, you can always create a custom connector by following [this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/).</span><br><span class="line">Your input -&gt;  what language does rasa support?</span><br><span class="line">You can use Rasa to build assistants in any language you want!</span><br><span class="line">Your input -&gt;  I want information about rasa x</span><br><span class="line">Rasa X is a tool to learn from real conversations and improve your assistant. Read more [here](https://rasa.com/docs/rasa-x/)</span><br><span class="line">Your input -&gt;  Thank you!</span><br><span class="line">No worries!</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -441,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/10/2020腾讯广告算法大赛笔记-1/" rel="next" title="2020腾讯广告算法大赛笔记-1">
-                <i class="fa fa-chevron-left"></i> 2020腾讯广告算法大赛笔记-1
+              <a href="/2020/05/11/Rasa笔记-2/" rel="next" title="Rasa笔记-2">
+                <i class="fa fa-chevron-left"></i> Rasa笔记-2
               </a>
             
           </div>
@@ -450,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/11/Rasa笔记-3/" rel="prev" title="Rasa笔记-3">
-                Rasa笔记-3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化一个机器人"><span class="nav-number">1.</span> <span class="nav-text">初始化一个机器人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改config-yml"><span class="nav-number">2.</span> <span class="nav-text">修改config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改stories-md"><span class="nav-number">3.</span> <span class="nav-text">修改stories.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改domain-yml"><span class="nav-number">4.</span> <span class="nav-text">修改domain.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改nlu-md"><span class="nav-number">5.</span> <span class="nav-text">修改nlu.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练模型"><span class="nav-number">6.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用训练好的模型进行对话"><span class="nav-number">7.</span> <span class="nav-text">使用训练好的模型进行对话</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改nlu-md"><span class="nav-number">1.</span> <span class="nav-text">修改nlu.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增responses-md"><span class="nav-number">2.</span> <span class="nav-text">新增responses.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改config-yml"><span class="nav-number">3.</span> <span class="nav-text">修改config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改domain-yml"><span class="nav-number">4.</span> <span class="nav-text">修改domain.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改stories-md"><span class="nav-number">5.</span> <span class="nav-text">修改stories.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练模型"><span class="nav-number">6.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用训练好的模型进行对话"><span class="nav-number">7.</span> <span class="nav-text">使用训练好的模型进行对话</span></a></li></ol></div>
             
 
           </div>
