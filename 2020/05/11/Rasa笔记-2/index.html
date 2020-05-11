@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Transformer," />
+  <meta name="keywords" content="Rasa," />
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="如下图，Transformer的结构分成左右两部分，左边是Encoder（可以多个Encoder重叠在一起），右边是Decoder（可以多个Decoder重叠在一起）。">
-<meta name="keywords" content="Transformer">
+<meta name="description" content="构建一个简单的FAQ机器人。">
+<meta name="keywords" content="Rasa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Transformer笔记">
-<meta property="og:url" content="http://shenhuaze.gitee.io/2020/04/28/Transformer笔记/index.html">
+<meta property="og:title" content="Rasa笔记-2">
+<meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-2/index.html">
 <meta property="og:site_name" content="申化泽的个人网站">
-<meta property="og:description" content="如下图，Transformer的结构分成左右两部分，左边是Encoder（可以多个Encoder重叠在一起），右边是Decoder（可以多个Decoder重叠在一起）。">
+<meta property="og:description" content="构建一个简单的FAQ机器人。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://shenhuaze.gitee.io/2020/04/28/Transformer笔记/1.png">
-<meta property="og:updated_time" content="2020-05-04T09:12:17.311Z">
+<meta property="og:updated_time" content="2020-05-11T10:36:35.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Transformer笔记">
-<meta name="twitter:description" content="如下图，Transformer的结构分成左右两部分，左边是Encoder（可以多个Encoder重叠在一起），右边是Decoder（可以多个Decoder重叠在一起）。">
-<meta name="twitter:image" content="http://shenhuaze.gitee.io/2020/04/28/Transformer笔记/1.png">
+<meta name="twitter:title" content="Rasa笔记-2">
+<meta name="twitter:description" content="构建一个简单的FAQ机器人。">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/04/28/Transformer笔记/"/>
+  <link rel="canonical" href="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-2/"/>
 
 
 
 
 
-  <title>Transformer笔记 | 申化泽的个人网站</title>
+  <title>Rasa笔记-2 | 申化泽的个人网站</title>
   
 
 
@@ -267,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/04/28/Transformer笔记/">
+    <link itemprop="mainEntityOfPage" href="http://shenhuaze.gitee.io/2020/05/11/Rasa笔记-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -284,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Transformer笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Rasa笔记-2</h1>
         
 
         <div class="post-meta">
@@ -296,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T21:32:31+08:00">
-                2020-04-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-11T16:41:33+08:00">
+                2020-05-11
               </time>
             
 
@@ -319,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NLP/" itemprop="url" rel="index">
-                    <span itemprop="name">NLP</span>
+                  <a href="/categories/对话机器人/" itemprop="url" rel="index">
+                    <span itemprop="name">对话机器人</span>
                   </a>
                 </span>
 
@@ -330,8 +328,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NLP/Transformer/" itemprop="url" rel="index">
-                    <span itemprop="name">Transformer</span>
+                  <a href="/categories/对话机器人/Rasa/" itemprop="url" rel="index">
+                    <span itemprop="name">Rasa</span>
                   </a>
                 </span>
 
@@ -348,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/28/Transformer笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/04/28/Transformer笔记/" itemprop="commentsCount"></span>
+                <a href="/2020/05/11/Rasa笔记-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/11/Rasa笔记-2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -357,7 +355,7 @@
 
           
           
-             <span id="/2020/04/28/Transformer笔记/" class="leancloud_visitors" data-flag-title="Transformer笔记">
+             <span id="/2020/05/11/Rasa笔记-2/" class="leancloud_visitors" data-flag-title="Rasa笔记-2">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,11 +386,31 @@
       
 
       
-        <p>如下图，Transformer的结构分成左右两部分，左边是Encoder（可以多个Encoder重叠在一起），右边是Decoder（可以多个Decoder重叠在一起）。</p>
+        <p>构建一个简单的FAQ机器人。</p>
 <a id="more"></a>
-<p><img src="//shenhuaze.gitee.io/2020/04/28/Transformer笔记/1.png" alt=""></p>
-<p>Encoder由self-attention层和feed-forward层组成。对于self-attention层，每个token的输入向量，都分别乘以W<sub>Q</sub>, W<sub>K</sub>, W<sub>V</sub>矩阵，得到query, key, value向量。当前token的query向量，去乘以每个位置的key向量，然后做softmax，得到当前位置对每个位置的attention分数，然后用每个位置的attention分数与每个位置的value向量相乘，做加权求和，就得到了当前位置的输出向量，再将self-attention层的输入向量与输出向量相加，再做Layer-Normalization，就得到了self-attention层整体的输出向量。实际应用中，可能会使用multi-head self-attention，意思就是，对于每个token，可以计算多组不同的query, key, value向量，得到不同的输出向量，然后拼接在一起，然后再乘以一个矩阵，得到输出向量。对于feed-forward层，以self-attention的输出向量作为输入向量，经过全连接网络，得到输出向量，然后将feed-forward层的输入向量与输出向量相加再做Layer-Normalization，就得到了feed-forward层整体的输出向量，该输出向量，可以作为下一个Encoder的输入，也可以作为Decoder的输入。</p>
-<p>Decoder与Encoder的结构差不多，只是在self-attention层与feed-forwrd层之间，多了一个encoder-decoder attention层。encoder-decoder attention层的输入向量乘以W<sub>Q</sub>矩阵矩阵，得到query向量，然后利用最后一个encoder的输出向量，乘以W<sub>K</sub>, W<sub>V</sub>矩阵矩阵，得到key, value向量，用当前token的query向量，去乘以encoder每个位置的key向量，然后做softmax，得到当前token对于输入序列每个位置的attention分数，然后用输入序列每个位置的attention分数与每个位置的value向量，做加权求和，得到当前token的输出向量。最后一个decoder的输出向量，乘以一个转换矩阵，得到vocab维度的输出向量，再做一个softmax，选取概率最大的token，作为输出。然后把当前位置的输出，作为下一个位置的输入。Decoder里面，在计算self-attention的时候，需要mask当前位置之后的token，具体做法就是在做softmax之前，将当前位置之后的token的数值，都设为负无穷大，softmax之后的分数就为0了。</p>
+<p>这是Rasa官方给的一个FAQ机器人例子，构建一个叫Sara的机器人，可以用来回答用户关于Rasa的问题。</p>
+<h2 id="初始化一个机器人"><a href="#初始化一个机器人" class="headerlink" title="初始化一个机器人"></a>初始化一个机器人</h2><p>首先创建一个目录，然后进行初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir rasa-assistant</span><br><span class="line">cd rasa-assistant</span><br><span class="line">rasa init</span><br></pre></td></tr></table></figure>
+<p>输入<code>rasa init</code>之后，会依次提示：构建机器人的目录（默认是当前目录）、是否训练模型（默认是yes）、是否跟训练好的机器人进行对话（默认是yes）。这里目录就选默认的当前目录，是否训练模型和是否进行对话，选yes和no都行，因为接下来要对一些文件进行修改，然后重新训练模型。</p>
+<h2 id="修改config-yml"><a href="#修改config-yml" class="headerlink" title="修改config.yml"></a>修改config.yml</h2><p>这里我们会用到MemoizationPolicy，对应的参数<code>max_history</code>表示机器人最多记住<code>max_history</code>轮历史信息。对于FAQ机器人来说，它只关心用户当前的输入，因此<code>max_history</code>设为1。</p>
+<p>config.yml的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Configuration for Rasa NLU.</span><br><span class="line"># https://rasa.com/docs/rasa/nlu/components/</span><br><span class="line">language: en</span><br><span class="line">pipeline: supervised_embeddings</span><br><span class="line"></span><br><span class="line"># Configuration for Rasa Core.</span><br><span class="line"># https://rasa.com/docs/rasa/core/policies/</span><br><span class="line">policies:</span><br><span class="line">  - name: MemoizationPolicy</span><br><span class="line">    max_history: 1</span><br><span class="line">  - name: MappingPolicy</span><br></pre></td></tr></table></figure>
+<p>其中MappingPolicy是用来处理<code>/restart</code>意图的，<code>/restart</code>意图是用来清空对话历史，开启新的一轮对话用的。</p>
+<h2 id="修改stories-md"><a href="#修改stories-md" class="headerlink" title="修改stories.md"></a>修改stories.md</h2><p>修改stories.md，修改后的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## greet</span><br><span class="line">* greet</span><br><span class="line">  - utter_greet</span><br><span class="line"></span><br><span class="line">## thank</span><br><span class="line">* thank</span><br><span class="line">  - utter_noworries</span><br><span class="line"></span><br><span class="line">## goodbye</span><br><span class="line">* bye</span><br><span class="line">  - utter_bye</span><br></pre></td></tr></table></figure>
+<p>stories.md中包含三个单轮对话，每个意图对应一个回复action。</p>
+<h2 id="修改domain-yml"><a href="#修改domain-yml" class="headerlink" title="修改domain.yml"></a>修改domain.yml</h2><p>修改domain.yml，修改后的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">intents:</span><br><span class="line">  - greet</span><br><span class="line">  - bye</span><br><span class="line">  - thank</span><br><span class="line"></span><br><span class="line">actions:</span><br><span class="line">  - utter_greet</span><br><span class="line">  - utter_noworries</span><br><span class="line">  - utter_bye</span><br><span class="line"></span><br><span class="line">templates:</span><br><span class="line">  utter_noworries:</span><br><span class="line">    - text: No worries!</span><br><span class="line">  utter_greet:</span><br><span class="line">    - text: Hi</span><br><span class="line">  utter_bye:</span><br><span class="line">    - text: Bye!</span><br></pre></td></tr></table></figure>
+<p>机器人总共支持三个意图：<code>greet</code>、<code>bye</code>和<code>thank</code>。总共支持三个action：<code>utter_noworries</code>、<code>utter_greet</code>和<code>utter_bye</code>。每个action对应的回复模板也都设定好了。</p>
+<h2 id="修改nlu-md"><a href="#修改nlu-md" class="headerlink" title="修改nlu.md"></a>修改nlu.md</h2><p>修改nlu.md，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">## intent:greet</span><br><span class="line">- Hi</span><br><span class="line">- Hey</span><br><span class="line">- Hi bot</span><br><span class="line">- Hey bot</span><br><span class="line">- Hello</span><br><span class="line">- Good morning</span><br><span class="line">- hi again</span><br><span class="line">- hi folks</span><br><span class="line"></span><br><span class="line">## intent:bye</span><br><span class="line">- goodbye</span><br><span class="line">- goodnight</span><br><span class="line">- good bye</span><br><span class="line">- good night</span><br><span class="line">- see ya</span><br><span class="line">- toodle-oo</span><br><span class="line">- bye bye</span><br><span class="line">- gotta go</span><br><span class="line">- farewell</span><br><span class="line"></span><br><span class="line">## intent:thank</span><br><span class="line">- Thanks</span><br><span class="line">- Thank you</span><br><span class="line">- Thank you so much</span><br><span class="line">- Thanks bot</span><br><span class="line">- Thanks for that</span><br><span class="line">- cheers</span><br></pre></td></tr></table></figure>
+<p>每个意图下都有多条属于该意图的句子。</p>
+<h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><p>训练模型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rasa train</span><br></pre></td></tr></table></figure>
+<h2 id="使用训练好的模型进行对话"><a href="#使用训练好的模型进行对话" class="headerlink" title="使用训练好的模型进行对话"></a>使用训练好的模型进行对话</h2><p>在训练好模型之后，就可以在命令行输入以下命令，进入对话交互模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rasa shell</span><br></pre></td></tr></table></figure>
+<p>下面是一些对话的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Your input -&gt;  Hello</span><br><span class="line">Hi</span><br><span class="line">Your input -&gt;  bye</span><br><span class="line">Bye!</span><br><span class="line">Your input -&gt;  thanks</span><br><span class="line">No worries!</span><br><span class="line">Your input -&gt;  hello</span><br><span class="line">Hi</span><br><span class="line">Your input -&gt;  byebye</span><br><span class="line">Bye!</span><br><span class="line">Your input -&gt;  Thank you!</span><br><span class="line">No worries!</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -410,7 +428,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Transformer/" rel="tag"># Transformer</a>
+            <a href="/tags/Rasa/" rel="tag"># Rasa</a>
           
         </div>
       
@@ -423,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/01/Random-Pick-with-Weight/" rel="next" title="Random Pick with Weight">
-                <i class="fa fa-chevron-left"></i> Random Pick with Weight
+              <a href="/2020/05/10/2020腾讯广告算法大赛笔记-1/" rel="next" title="2020腾讯广告算法大赛笔记-1">
+                <i class="fa fa-chevron-left"></i> 2020腾讯广告算法大赛笔记-1
               </a>
             
           </div>
@@ -432,10 +450,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/28/XLNet笔记/" rel="prev" title="XLNet笔记">
-                XLNet笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -494,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -572,6 +595,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化一个机器人"><span class="nav-number">1.</span> <span class="nav-text">初始化一个机器人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改config-yml"><span class="nav-number">2.</span> <span class="nav-text">修改config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改stories-md"><span class="nav-number">3.</span> <span class="nav-text">修改stories.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改domain-yml"><span class="nav-number">4.</span> <span class="nav-text">修改domain.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改nlu-md"><span class="nav-number">5.</span> <span class="nav-text">修改nlu.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练模型"><span class="nav-number">6.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用训练好的模型进行对话"><span class="nav-number">7.</span> <span class="nav-text">使用训练好的模型进行对话</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
