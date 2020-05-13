@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="构建多轮对话机器人。">
+<meta name="description" content="利用FromPolicy构建多轮对话机器人。">
 <meta name="keywords" content="Rasa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rasa笔记-4">
 <meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/13/Rasa笔记-4/index.html">
 <meta property="og:site_name" content="申化泽的学习笔记">
-<meta property="og:description" content="构建多轮对话机器人。">
+<meta property="og:description" content="利用FromPolicy构建多轮对话机器人。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-13T10:46:38.880Z">
+<meta property="og:updated_time" content="2020-05-13T10:56:42.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rasa笔记-4">
-<meta name="twitter:description" content="构建多轮对话机器人。">
+<meta name="twitter:description" content="利用FromPolicy构建多轮对话机器人。">
 
 
 
@@ -386,10 +386,10 @@
       
 
       
-        <p>构建多轮对话机器人。</p>
+        <p>利用FromPolicy构建多轮对话机器人。</p>
 <a id="more"></a>
-<h2 id="FormPolicy"><a href="#FormPolicy" class="headerlink" title="FormPolicy"></a>FormPolicy</h2><p>一种比较常见的机器人，就是先收集用户输入的各种信息，然后做某件事情。这里我们要构建一个机器人，用来处理关于Rasa销售的问题。</p>
-<p>首先需要收集用户的以下信息：</p>
+<h2 id="FormPolicy"><a href="#FormPolicy" class="headerlink" title="FormPolicy"></a>FormPolicy</h2><p>一种比较常见的机器人，就是先收集用户输入的各种信息，然后做某件事情。</p>
+<p>这里我们要构建一个机器人，用来处理关于Rasa销售的问题。首先需要收集用户的以下信息：</p>
 <ul>
 <li>Their job</li>
 <li>Their bot use case</li>
@@ -398,8 +398,8 @@
 <li>Their budget</li>
 <li>Their company</li>
 </ul>
-<p>当机器人收集完用户的以上信息之后，就回复用户说”感谢您咨询，我们稍后会联系你”，或者做其他操作。</p>
-<p>这里可以用FormPolicy来实现上述功能。</p>
+<p>当机器人收集完用户的以上信息之后，就回复用户说”感谢您的咨询，我们稍后会联系你”，或者做其他操作。</p>
+<p>这里可以用<strong>FormPolicy</strong>来实现上述功能。</p>
 <h2 id="修改actions-py"><a href="#修改actions-py" class="headerlink" title="修改actions.py"></a>修改actions.py</h2><p>在actions.py中新增一个类<code>SalesForm</code>。</p>
 <p>首先需要定义<code>name</code>方法，实际就是定义action的名字，如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rasa_sdk.forms <span class="keyword">import</span> FormAction</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SalesForm</span><span class="params">(FormAction)</span>:</span></span><br><span class="line">    <span class="string">"""Collects sales information and adds it to the spreadsheet"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"sales_form"</span></span><br></pre></td></tr></table></figure>
