@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="申化泽的学习笔记">
 <meta property="og:description" content="今天提交了第二版结果，得分为1.230478，相比于之前的随机结果得分0.600986提升了一倍多，由于是中午12点之后提交的，因此下午3点更新排名的时候，还是以之前提交的0.600986的得分排的，排到408名了。不过估计1.230478的得分今天应该是能排到100多名。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-13T12:39:42.404Z">
+<meta property="og:updated_time" content="2020-05-13T12:44:04.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2020腾讯广告算法大赛笔记-2">
 <meta name="twitter:description" content="今天提交了第二版结果，得分为1.230478，相比于之前的随机结果得分0.600986提升了一倍多，由于是中午12点之后提交的，因此下午3点更新排名的时候，还是以之前提交的0.600986的得分排的，排到408名了。不过估计1.230478的得分今天应该是能排到100多名。">
@@ -389,7 +389,7 @@
         <p>今天提交了第二版结果，得分为<code>1.230478</code>，相比于之前的随机结果得分<code>0.600986</code>提升了一倍多，由于是中午12点之后提交的，因此下午3点更新排名的时候，还是以之前提交的<code>0.600986</code>的得分排的，排到408名了。不过估计<code>1.230478</code>的得分今天应该是能排到100多名。</p>
 <a id="more"></a>
 <h2 id="训练item2vec"><a href="#训练item2vec" class="headerlink" title="训练item2vec"></a>训练item2vec</h2><p>这次做的主要工作，是利用item2vec算法，将creative_id（广告素材id）表示成embedding，然后将每个user_id点击过的所有creative_id向量加起来，作为user_id的特征，用来预测user_id的age和gender。</p>
-<p>具体做的时候，首先读取click_log.csv文件，将每个user_id点击过的creative_id合到一起，每个user_id都对应一个creative_id集合，每个集合可以看成类似word2vec里的每个句子，只是集合里面的元素是没有顺序的，只需要对word2vec算法稍作修改，就可以将集合里的每个元素都表示成embedding（这里embedding的维度我设为的50），具体算法细节可以看论文<a href="https://arxiv.org/abs/1603.04259" target="_blank" rel="noopener">Item2Vec: Neural Item Embedding for Collaborative Filtering</a>。训练的时候，我是直接pip安装了一个叫[itembed](<a href="https://pypi.org/project/itembed/的包，处理成需要的输入格式，就可以进行训练了。" target="_blank" rel="noopener">https://pypi.org/project/itembed/的包，处理成需要的输入格式，就可以进行训练了。</a></p>
+<p>具体做的时候，首先读取click_log.csv文件，将每个user_id点击过的creative_id合到一起，每个user_id都对应一个creative_id集合，每个集合可以看成类似word2vec里的每个句子，只是集合里面的元素是没有顺序的，只需要对word2vec算法稍作修改，就可以将集合里的每个元素都表示成embedding（这里embedding的维度我设为的50），具体算法细节可以看论文<a href="https://arxiv.org/abs/1603.04259" target="_blank" rel="noopener">Item2Vec: Neural Item Embedding for Collaborative Filtering</a>。训练的时候，我是直接pip安装了一个叫<a href="https://pypi.org/project/itembed/" target="_blank" rel="noopener">itembed</a>的包，处理成需要的输入格式，就可以进行训练了。</p>
 <p>另外，我是将训练集和测试集里的所有点击数据合到一起训练的，想的是让训练集和测试集里的每个creative_id都能得到训练。训练集里总共有2481135个不同的creative_id，测试集里总共有2618159个不同的creative_id，合到一起之后总共有3412772个不同的creative_id。但实际训练完之后，发现总共只要2083856个creative_id有embedding。我估计是训练的时候，低频的creative_id被去掉了。这里之后也许可以优化。</p>
 <h2 id="构建用户特征"><a href="#构建用户特征" class="headerlink" title="构建用户特征"></a>构建用户特征</h2><p>将每个user_id对应的所有creative_id的embedding加到一起，就可以作为user_id对应的特征。如果user_id对应的所有creative_id刚好都在训练item2vec的时候，因为出现的频次较低被删掉了，那么就直接将user_id的每一维特征都直接设为0。</p>
 <p>这里的用户特征，我暂时只利用了user_id与creative_id的交互信息，还没有利用creative_id对应的广告详细信息，以及user_id对creative_id的点击次数，这些都可以作为之后的提升方向。</p>
