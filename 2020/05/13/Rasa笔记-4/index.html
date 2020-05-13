@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="利用FromPolicy构建多轮对话机器人。">
+<meta name="description" content="利用FormPolicy构建多轮对话机器人。">
 <meta name="keywords" content="Rasa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rasa笔记-4">
 <meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/13/Rasa笔记-4/index.html">
 <meta property="og:site_name" content="申化泽的学习笔记">
-<meta property="og:description" content="利用FromPolicy构建多轮对话机器人。">
+<meta property="og:description" content="利用FormPolicy构建多轮对话机器人。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-13T10:56:42.559Z">
+<meta property="og:updated_time" content="2020-05-13T11:24:06.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rasa笔记-4">
-<meta name="twitter:description" content="利用FromPolicy构建多轮对话机器人。">
+<meta name="twitter:description" content="利用FormPolicy构建多轮对话机器人。">
 
 
 
@@ -386,9 +386,9 @@
       
 
       
-        <p>利用FromPolicy构建多轮对话机器人。</p>
+        <p>利用FormPolicy构建多轮对话机器人。</p>
 <a id="more"></a>
-<h2 id="FormPolicy"><a href="#FormPolicy" class="headerlink" title="FormPolicy"></a>FormPolicy</h2><p>一种比较常见的机器人，就是先收集用户输入的各种信息，然后做某件事情。</p>
+<p>一种比较常见的机器人，就是先收集用户输入的各种信息，然后做某件事情。</p>
 <p>这里我们要构建一个机器人，用来处理关于Rasa销售的问题。首先需要收集用户的以下信息：</p>
 <ul>
 <li>Their job</li>
@@ -643,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FormPolicy"><span class="nav-number">1.</span> <span class="nav-text">FormPolicy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改actions-py"><span class="nav-number">2.</span> <span class="nav-text">修改actions.py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改domain-yml"><span class="nav-number">3.</span> <span class="nav-text">修改domain.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改nlu-md"><span class="nav-number">4.</span> <span class="nav-text">修改nlu.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改stories-md"><span class="nav-number">5.</span> <span class="nav-text">修改stories.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改config-yml"><span class="nav-number">6.</span> <span class="nav-text">修改config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改endpoints-yml"><span class="nav-number">7.</span> <span class="nav-text">修改endpoints.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启action服务"><span class="nav-number">8.</span> <span class="nav-text">开启action服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练模型"><span class="nav-number">9.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用训练好的模型进行对话"><span class="nav-number">10.</span> <span class="nav-text">使用训练好的模型进行对话</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改actions-py"><span class="nav-number">1.</span> <span class="nav-text">修改actions.py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改domain-yml"><span class="nav-number">2.</span> <span class="nav-text">修改domain.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改nlu-md"><span class="nav-number">3.</span> <span class="nav-text">修改nlu.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改stories-md"><span class="nav-number">4.</span> <span class="nav-text">修改stories.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改config-yml"><span class="nav-number">5.</span> <span class="nav-text">修改config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改endpoints-yml"><span class="nav-number">6.</span> <span class="nav-text">修改endpoints.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启action服务"><span class="nav-number">7.</span> <span class="nav-text">开启action服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练模型"><span class="nav-number">8.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用训练好的模型进行对话"><span class="nav-number">9.</span> <span class="nav-text">使用训练好的模型进行对话</span></a></li></ol></div>
             
 
           </div>
