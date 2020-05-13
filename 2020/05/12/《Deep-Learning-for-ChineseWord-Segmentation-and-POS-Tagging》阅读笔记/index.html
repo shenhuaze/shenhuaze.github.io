@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。 这篇文章的优点这篇文章最大的优点，在于网络结构非常简单，模型参数很少，但是效果还不错，非常适合用在对模型大小">
+<meta name="description" content="这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。">
 <meta name="keywords" content="分词,NER,序列标注">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Deep Learning for ChineseWord Segmentation and POS Tagging》阅读笔记">
 <meta property="og:url" content="http://shenhuaze.gitee.io/2020/05/12/《Deep-Learning-for-ChineseWord-Segmentation-and-POS-Tagging》阅读笔记/index.html">
 <meta property="og:site_name" content="申化泽的学习笔记">
-<meta property="og:description" content="这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。 这篇文章的优点这篇文章最大的优点，在于网络结构非常简单，模型参数很少，但是效果还不错，非常适合用在对模型大小">
+<meta property="og:description" content="这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-12T06:09:58.989Z">
+<meta property="og:updated_time" content="2020-05-13T11:02:19.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Deep Learning for ChineseWord Segmentation and POS Tagging》阅读笔记">
-<meta name="twitter:description" content="这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。 这篇文章的优点这篇文章最大的优点，在于网络结构非常简单，模型参数很少，但是效果还不错，非常适合用在对模型大小">
+<meta name="twitter:description" content="这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。">
 
 
 
@@ -387,6 +387,7 @@
 
       
         <p>这篇文章发表于2013年10月份的EMNLP，与word2vec论文发表的时间差不多，文中将深度学习技术运用到分词和词性标注上。分词和词性标注都可以看成序列标注问题，因此文中提到的网络结构还可以用到其他序列标注问题上（比如命名实体识别）。另外，对网络的输出层做一下修改，还可以用于文本分类。</p>
+<a id="more"></a>
 <h2 id="这篇文章的优点"><a href="#这篇文章的优点" class="headerlink" title="这篇文章的优点"></a>这篇文章的优点</h2><p>这篇文章最大的优点，在于网络结构非常简单，模型参数很少，但是效果还不错，非常适合用在对模型大小和计算量有严格限制的场景，比如手机上。而且由于模型结构很简单，而且可以用类似感知机在线学习的方式进行训练，因此可以不用任何深度学习框架，自己用任何编程语言（Java, Python, C++都行）都可以实现这个模型，灵活性很强。</p>
 <p>另外，文中提到的模型结构，既可以支持序列标注问题，也可以支持文本分类问题，只需要通过调整输出层就可以了，非常方便。</p>
 <h2 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h2>
