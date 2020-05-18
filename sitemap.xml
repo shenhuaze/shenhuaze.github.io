@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shenhuaze.gitee.io/about/index.html</loc>
+    
+    <lastmod>2020-05-18T04:52:02.087Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://shenhuaze.gitee.io/2020/05/16/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1/</loc>
     
     <lastmod>2020-05-17T07:17:26.181Z</lastmod>
@@ -145,13 +152,6 @@
     <loc>http://shenhuaze.gitee.io/2020/04/28/XLNet%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2020-04-28T17:02:47.003Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shenhuaze.gitee.io/about/index.html</loc>
-    
-    <lastmod>2019-06-23T01:05:43.795Z</lastmod>
     
   </url>
   
