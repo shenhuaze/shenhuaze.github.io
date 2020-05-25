@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="申化泽的学习笔记">
 <meta property="og:description" content="最近比较忙，周末抽时间实现了一个深度模型，得分为1.33分，比上次的结果提升了113名，排到第211名。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://shenhuaze.gitee.io/2020/05/25/2020腾讯广告算法大赛笔记-4/dnn.png">
-<meta property="og:updated_time" content="2020-05-25T10:02:57.701Z">
+<meta property="og:image" content="http://shenhuaze.gitee.io/2020/05/25/2020腾讯广告算法大赛笔记-4/dnn.jpg">
+<meta property="og:updated_time" content="2020-05-25T10:27:27.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2020腾讯广告算法大赛笔记-4">
 <meta name="twitter:description" content="最近比较忙，周末抽时间实现了一个深度模型，得分为1.33分，比上次的结果提升了113名，排到第211名。">
-<meta name="twitter:image" content="http://shenhuaze.gitee.io/2020/05/25/2020腾讯广告算法大赛笔记-4/dnn.png">
+<meta name="twitter:image" content="http://shenhuaze.gitee.io/2020/05/25/2020腾讯广告算法大赛笔记-4/dnn.jpg">
 
 
 
@@ -391,7 +391,7 @@
         <p>最近比较忙，周末抽时间实现了一个深度模型，得分为1.33分，比上次的结果提升了113名，排到第211名。</p>
 <a id="more"></a>
 <h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><p>网络结构如图所示。由于每个user_id都对应多个creative_id、ad_id、product_id、product_category、advertiser_id和industry。我们首先将每个广告相关的id都嵌入为一个embedding，然后将每个field的所有id的embedding加起来求平均，得到平均之后的向量，然后将不同field平均之后的向量首尾拼接起来，然后再过dnn，最后再做softmax，与目标计算损失函数。这里我将age和gender合到了一起，变成20个类别。</p>
-<p><img src="//shenhuaze.gitee.io/2020/05/25/2020腾讯广告算法大赛笔记-4/dnn.png" alt="dnn"></p>
+<p><img src="//shenhuaze.gitee.io/2020/05/25/2020腾讯广告算法大赛笔记-4/dnn.jpg" alt="dnn"></p>
 <h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>目前只是初步实现了这样一个网络结构，参数也是随便设的，而且是一个一个样本训练的，只训练了两个epoch，总之非常粗糙。但是效果还不错，比之前提升了0.05分。接下来可以做进一步的优化。</p>
 
       
