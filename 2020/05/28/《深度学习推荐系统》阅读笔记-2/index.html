@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="申化泽的学习笔记">
 <meta property="og:description" content="今天看Embedding技术在推荐系统中的应用。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-28T02:03:01.807Z">
+<meta property="og:updated_time" content="2020-05-28T02:30:00.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《深度学习推荐系统》阅读笔记-2">
 <meta name="twitter:description" content="今天看Embedding技术在推荐系统中的应用。">
@@ -394,13 +394,11 @@
 <li>利用embedding计算物品和用户的相似度，是常用的召回技术。</li>
 </ol>
 <h2 id="常见Embedding"><a href="#常见Embedding" class="headerlink" title="常见Embedding"></a>常见Embedding</h2><h3 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h3><p>NLP中，生成每个词的embedding。</p>
-<h3 id="Item2vec"><a href="#Item2vec" class="headerlink" title="Item2vec"></a>Item2vec</h3><p>对物品生成embedding。</p>
-<p>局限性：只能利用序列型数据。</p>
+<h3 id="Item2vec"><a href="#Item2vec" class="headerlink" title="Item2vec"></a>Item2vec</h3><p>对物品生成embedding。局限性：只能利用序列型数据。</p>
 <h3 id="Graph-Embedding"><a href="#Graph-Embedding" class="headerlink" title="Graph Embedding"></a>Graph Embedding</h3><p>利用用户和物品的交互数据，生成物品关系图，然后对图中的每个节点进行embedding</p>
 <h4 id="DeepWalk"><a href="#DeepWalk" class="headerlink" title="DeepWalk"></a>DeepWalk</h4><p>在物品关系图上随机游走，生成大量物品序列，然后训练word2vec</p>
-<h4 id="Node2vec"><a href="#Node2vec" class="headerlink" title="Node2vec"></a>Node2vec</h4><p>对DeepWalk进行了改进，使生成的embedding更能体现网络的同质性，即距离相近节点的embedding应该尽量相似。</p>
-<p>Node2vec在进行随机游走的过程中，结合了BFS和DFS，主要是通过节点间的调整概率来控制。</p>
-<h4 id="EGES"><a href="#EGES" class="headerlink" title="EGES"></a>EGES</h4><p>阿里巴巴在淘宝中使用的embedding方法，基本思想是在DeepWalk生成的embedding基础上引入补充信息。</p>
+<h4 id="Node2vec"><a href="#Node2vec" class="headerlink" title="Node2vec"></a>Node2vec</h4><p>对DeepWalk进行了改进，使生成的embedding更能体现网络的同质性，即距离相近节点的embedding应该尽量相似。Node2vec在进行随机游走的过程中，结合了BFS和DFS，主要是通过节点间的调整概率来控制。</p>
+<h4 id="EGES"><a href="#EGES" class="headerlink" title="EGES"></a>EGES</h4><p>淘宝使用的embedding方法，基本思想是在DeepWalk生成的embedding基础上引入补充信息。</p>
 <h2 id="Embedding与推荐系统的结合"><a href="#Embedding与推荐系统的结合" class="headerlink" title="Embedding与推荐系统的结合"></a>Embedding与推荐系统的结合</h2><ol>
 <li>作为深度学习网络的Embedding层。</li>
 <li>作为预训练的特征向量，直接作为特征。</li>
